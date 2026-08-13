@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order - SeoSonas</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .radio-group {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+    }
+    
+    .radio-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      border: 2px solid transparent;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .radio-item:hover {
+      border-color: var(--secondary-color);
+      background-color: var(--light-bg);
+    }
+    
+    .radio-item input[type="radio"] {
+      margin-right: 1rem;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+    }
+    
+    .radio-item-content {
+      flex: 1;
+    }
+    
+    .radio-item-title {
+      font-weight: 600;
+      color: var(--accent-color);
+      margin-bottom: 0.25rem;
+    }
+    
+    .radio-item-price {
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="header-top">
+        <div class="logo">✨ SeoSonas</div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="faeries.html">Faeries</a></li>
+            <li><a href="wish-witches.html">Wish Witches</a></li>
+            <li><a href="kitchen-witches.html">Kitchen Witches</a></li>
+            <li><a href="fictional-magical-characters.html">Fictional Characters</a></li>
+            <li><a href="more.html">More</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-bottom">
+        <a href="order.html" class="order-button">Order</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="order-container">
+      <h1 style="text-align: center; margin-bottom: 2rem; color: var(--accent-color);">Place Your Order</h1>
+      <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">Select a product category below to choose your order. Delivery is £4.65 across the board.</p>
+
+      <!-- Order Tabs -->
+      <div class="order-tabs">
+        <button class="order-tab-button" data-tab="faeries">Faeries</button>
+        <button class="order-tab-button" data-tab="wish-witches">Wish Witches</button>
+        <button class="order-tab-button" data-tab="kitchen-witches">Kitchen Witches</button>
+        <button class="order-tab-button" data-tab="fictional-characters">Fictional Characters</button>
+        <button class="order-tab-button" data-tab="more">More</button>
+      </div>
+
+      <!-- 1. Faeries -->
+      <div class="order-section" id="faeries">
+        <h2>Faeries</h2>
+        <div class="radio-group">
+          <div class="radio-item">
+            <input type="radio" id="faeries-1" name="faeries-option" value="1-faery" 
+              data-link="https://lopay.app/01e43/467e3248-9aa8-46e3-9e7e-c95e08b12ffa">
+            <div class="radio-item-content">
+              <div class="radio-item-title">1 Faery</div>
+              <div class="radio-item-price">£20.50 + £4.65 delivery = £25.15</div>
+            </div>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="faeries-2" name="faeries-option" value="2-faeries"
+              data-link="https://lopay.app/01e43/9b7fc6e8-3711-42e0-8b6b-ca27f14b41eb">
+            <div class="radio-item-content">
+              <div class="radio-item-title">2 Faeries</div>
+              <div class="radio-item-price">£40.00 + £4.65 delivery = £44.65</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-form">
+          <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Faery Order Details</h3>
+          <form class="order-checkout-form" data-category="faeries">
+            <div class="form-group">
+              <label for="faeries-name">Name *</label>
+              <input type="text" id="faeries-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="faeries-email">Email *</label>
+              <input type="email" id="faeries-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="faeries-description">Order Details</label>
+              <textarea id="faeries-description" name="description" placeholder="Tell us about your faery order... (which faeries you'd like, any special requests, etc.)"></textarea>
+            </div>
+            <input type="hidden" name="payment-link" class="payment-link-field">
+            <button type="submit" class="form-submit">Proceed to Payment</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 2. Wish Witches -->
+      <div class="order-section" id="wish-witches">
+        <h2>Wish Witches</h2>
+        <div class="radio-group">
+          <div class="radio-item">
+            <input type="radio" id="wish-1" name="wish-option" value="1-witch"
+              data-link="https://lopay.app/01e43/860f5f67-b67b-44e2-bb77-a2caba8be4b4">
+            <div class="radio-item-content">
+              <div class="radio-item-title">1 Wish Witch</div>
+              <div class="radio-item-price">£5.00 + £4.65 delivery = £9.65</div>
+            </div>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="wish-2" name="wish-option" value="2-witches"
+              data-link="https://lopay.app/01e43/ee69b032-d385-4780-b642-665a4b221a24">
+            <div class="radio-item-content">
+              <div class="radio-item-title">2 Wish Witches</div>
+              <div class="radio-item-price">£9.00 + £4.65 delivery = £13.65</div>
+            </div>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="wish-3" name="wish-option" value="3-witches"
+              data-link="https://lopay.app/01e43/e9383104-aed0-41a4-a31e-b469d616a202">
+            <div class="radio-item-content">
+              <div class="radio-item-title">3 Wish Witches</div>
+              <div class="radio-item-price">£13.00 + £4.65 delivery = £17.65</div>
+            </div>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="wish-4" name="wish-option" value="4-witches"
+              data-link="https://lopay.app/01e43/e43e4a76-4d59-4393-b2e2-59de4e9850dd">
+            <div class="radio-item-content">
+              <div class="radio-item-title">Set of 4 Wish Witches</div>
+              <div class="radio-item-price">£19.00 + £4.65 delivery = £23.65</div>
+            </div>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="wish-6" name="wish-option" value="6-witches"
+              data-link="https://lopay.app/01e43/5a74b116-c29f-40da-bb2c-c0d2f1127e2a">
+            <div class="radio-item-content">
+              <div class="radio-item-title">Set of 6 Wish Witches</div>
+              <div class="radio-item-price">£28.00 + £4.65 delivery = £32.65</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-form">
+          <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Wish Witch Order Details</h3>
+          <form class="order-checkout-form" data-category="wish-witches">
+            <div class="form-group">
+              <label for="wish-name">Name *</label>
+              <input type="text" id="wish-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="wish-email">Email *</label>
+              <input type="email" id="wish-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="wish-description">Order Details</label>
+              <textarea id="wish-description" name="description" placeholder="Tell us about your wish witch order... (which witches you'd like, their names, special wishes, etc.)"></textarea>
+            </div>
+            <input type="hidden" name="payment-link" class="payment-link-field">
+            <button type="submit" class="form-submit">Proceed to Payment</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 3. Kitchen Witches -->
+      <div class="order-section" id="kitchen-witches">
+        <h2>Kitchen Witches</h2>
+        <div class="radio-group">
+          <div class="radio-item">
+            <input type="radio" id="kitchen-1" name="kitchen-option" value="1-witch"
+              data-link="https://lopay.app/01e43/864e230f-829a-4fc8-978d-674bcffe387c">
+            <div class="radio-item-content">
+              <div class="radio-item-title">1 Kitchen Witch</div>
+              <div class="radio-item-price">£19.95 + £4.65 delivery = £24.60</div>
+            </div>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="kitchen-2" name="kitchen-option" value="2-witches" disabled>
+            <div class="radio-item-content">
+              <div class="radio-item-title">2 Kitchen Witches</div>
+              <div class="radio-item-price">£38.00 + £4.65 delivery = £42.65 <em style="color: #999;">(Coming Soon)</em></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-form">
+          <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Kitchen Witch Order Details</h3>
+          <form class="order-checkout-form" data-category="kitchen-witches">
+            <div class="form-group">
+              <label for="kitchen-name">Name *</label>
+              <input type="text" id="kitchen-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="kitchen-email">Email *</label>
+              <input type="email" id="kitchen-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="kitchen-description">Order Details</label>
+              <textarea id="kitchen-description" name="description" placeholder="Tell us about your kitchen witch order... (colors, quantities, any special requests, etc.)"></textarea>
+            </div>
+            <input type="hidden" name="payment-link" class="payment-link-field">
+            <button type="submit" class="form-submit">Proceed to Payment</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 4. Fictional Magical Characters -->
+      <div class="order-section" id="fictional-characters">
+        <h2>Fictional Magical Characters</h2>
+        <div class="radio-group">
+          <div class="radio-item">
+            <input type="radio" id="char-1" name="char-option" value="1-character"
+              data-link="https://lopay.app/01e43/d3aab094-6344-47d3-8653-0989e981f2ad">
+            <div class="radio-item-content">
+              <div class="radio-item-title">1 Fictional Magical Character</div>
+              <div class="radio-item-price">£7.00 + £4.65 delivery = £11.65</div>
+            </div>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="char-2" name="char-option" value="2-characters"
+              data-link="https://lopay.app/01e43/c5021c5e-838d-4b54-a7e4-a21df695e09b">
+            <div class="radio-item-content">
+              <div class="radio-item-title">2 Fictional Magical Characters</div>
+              <div class="radio-item-price">£13.00 + £4.65 delivery = £17.65</div>
+            </div>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="char-3" name="char-option" value="3-characters"
+              data-link="https://lopay.app/01e43/84ff3697-1315-41e9-98fb-62ec4624b550">
+            <div class="radio-item-content">
+              <div class="radio-item-title">3 Fictional Magical Characters</div>
+              <div class="radio-item-price">£19.50 + £4.65 delivery = £24.15</div>
+            </div>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="char-4" name="char-option" value="4-characters" disabled>
+            <div class="radio-item-content">
+              <div class="radio-item-title">4 Fictional Magical Characters</div>
+              <div class="radio-item-price">£26.00 + £4.65 delivery = £30.65 <em style="color: #999;">(Coming Soon)</em></div>
+            </div>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="char-5" name="char-option" value="5-characters" disabled>
+            <div class="radio-item-content">
+              <div class="radio-item-title">5 Fictional Magical Characters</div>
+              <div class="radio-item-price">£32.50 + £4.65 delivery = £37.15 <em style="color: #999;">(Coming Soon)</em></div>
+            </div>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="char-6" name="char-option" value="6-characters" disabled>
+            <div class="radio-item-content">
+              <div class="radio-item-title">6 Fictional Magical Characters</div>
+              <div class="radio-item-price">£39.00 + £4.65 delivery = £43.65 <em style="color: #999;">(Coming Soon)</em></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-form">
+          <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Fictional Character Order Details</h3>
+          <form class="order-checkout-form" data-category="fictional-characters">
+            <div class="form-group">
+              <label for="char-name">Name *</label>
+              <input type="text" id="char-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="char-email">Email *</label>
+              <input type="email" id="char-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="char-description">Order Details</label>
+              <textarea id="char-description" name="description" placeholder="Tell us about your character order... (which characters you'd like, what universes, any special requests, etc.)"></textarea>
+            </div>
+            <input type="hidden" name="payment-link" class="payment-link-field">
+            <button type="submit" class="form-submit">Proceed to Payment</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 5. More -->
+      <div class="order-section" id="more">
+        <h2>More</h2>
+        <div style="background-color: var(--light-bg); padding: 2rem; border-radius: 0.5rem; text-align: center;">
+          <p style="font-size: 1.1rem; color: var(--accent-color); font-weight: 600;">Coming Soon!</p>
+          <p>Our collection of peg dolls and musical box miniatures will be available soon. Check back for updates!</p>
+        </div>
+
+        <div class="order-form">
+          <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Interested in More Items?</h3>
+          <p style="margin-bottom: 1.5rem;">Reach out to us with your interest in peg dolls or musical box miniatures, and we'll get back to you when they're available for order!</p>
+          <form class="order-checkout-form" data-category="more">
+            <div class="form-group">
+              <label for="more-name">Name *</label>
+              <input type="text" id="more-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="more-email">Email *</label>
+              <input type="email" id="more-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="more-description">What Are You Interested In?</label>
+              <textarea id="more-description" name="description" placeholder="Tell us what products you're interested in... (peg dolls, musical box miniatures, etc.)"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Submit Interest</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivery Info -->
+    <section style="margin-top: 3rem; background-color: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+      <h2 style="color: var(--accent-color); margin-bottom: 1rem;">Important Information</h2>
+      <p><strong>Delivery Cost:</strong> £4.65 (standard delivery across the board)</p>
+      <p style="margin-top: 1rem;"><strong>How It Works:</strong> Select your desired product option above, fill in your details, and click "Proceed to Payment" to be taken to our secure payment page. You'll receive confirmation of your order via email.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="faeries.html">Faeries</a></li>
+            <li><a href="wish-witches.html">Wish Witches</a></li>
+            <li><a href="kitchen-witches.html">Kitchen Witches</a></li>
+            <li><a href="fictional-magical-characters.html">Fictional Characters</a></li>
+            <li><a href="more.html">More</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Order Categories</h4>
+          <ul>
+            <li><a href="#faeries">Faeries</a></li>
+            <li><a href="#wish-witches">Wish Witches</a></li>
+            <li><a href="#kitchen-witches">Kitchen Witches</a></li>
+            <li><a href="#fictional-characters">Fictional Characters</a></li>
+            <li><a href="#more">More</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About Helen</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SeoSonas. Handmade with magic and love. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Make entire .radio-item div clickable to select radio input
+    document.querySelectorAll('.radio-item').forEach(item => {
+      item.addEventListener('click', function(e) {
+        // Prevent event propagation if clicking the actual radio input
+        if (e.target.type === 'radio') return;
+        
+        const radio = this.querySelector('input[type="radio"]');
+        if (radio) {
+          radio.click();
+        }
+      });
+    });
+
+    // Handle radio button selection and payment link injection
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        const form = this.closest('.order-section').querySelector('.order-checkout-form');
+        if (form) {
+          const paymentLinkField = form.querySelector('.payment-link-field');
+          paymentLinkField.value = this.dataset.link;
+        }
+      });
+    });
+
+    // Handle order form submission
+    document.querySelectorAll('.order-checkout-form').forEach(form => {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const category = this.dataset.category;
+        const radioButton = this.closest('.order-section').querySelector('input[type="radio"]:checked');
+        
+        // Check if a radio option was selected (except for 'more' category)
+        if (category !== 'more' && !radioButton) {
+          alert('Please select an option before proceeding.');
+          return;
+        }
+        
+        const paymentLink = this.querySelector('.payment-link-field').value;
+        
+        // Get form data for logging/tracking if needed
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+        // Validate required fields
+        if (!data.name || !data.email) {
+          alert('Please fill in your name and email.');
+          return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
+          alert('Please enter a valid email address.');
+          return;
+        }
+        
+        // For 'more' category, just submit the form without payment link
+        if (category === 'more') {
+          alert('Thank you for your interest! We will contact you soon.');
+          this.reset();
+          return;
+        }
+        
+        // Log order data and redirect to payment
+        console.log('Order submitted:', data);
+        
+        // Redirect to payment link
+        if (paymentLink) {
+          window.open(paymentLink, '_blank');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
