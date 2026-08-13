@@ -93,7 +93,8 @@
 
         <div class="order-form">
           <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Faery Order Details</h3>
-          <form class="order-checkout-form" data-category="faeries">
+          <form class="order-checkout-form" data-category="faeries" name="faeries-order" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="faeries-order" />
             <div class="form-group">
               <label for="faeries-name">Name *</label>
               <input type="text" id="faeries-name" name="name" required>
@@ -160,7 +161,8 @@
 
         <div class="order-form">
           <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Wish Witch Order Details</h3>
-          <form class="order-checkout-form" data-category="wish-witches">
+          <form class="order-checkout-form" data-category="wish-witches" name="wish-witches-order" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="wish-witches-order" />
             <div class="form-group">
               <label for="wish-name">Name *</label>
               <input type="text" id="wish-name" name="name" required>
@@ -202,7 +204,8 @@
 
         <div class="order-form">
           <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Kitchen Witch Order Details</h3>
-          <form class="order-checkout-form" data-category="kitchen-witches">
+          <form class="order-checkout-form" data-category="kitchen-witches" name="kitchen-witches-order" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="kitchen-witches-order" />
             <div class="form-group">
               <label for="kitchen-name">Name *</label>
               <input type="text" id="kitchen-name" name="name" required>
@@ -274,7 +277,8 @@
 
         <div class="order-form">
           <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Fictional Character Order Details</h3>
-          <form class="order-checkout-form" data-category="fictional-characters">
+          <form class="order-checkout-form" data-category="fictional-characters" name="fictional-characters-order" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="fictional-characters-order" />
             <div class="form-group">
               <label for="char-name">Name *</label>
               <input type="text" id="char-name" name="name" required>
@@ -304,7 +308,8 @@
         <div class="order-form">
           <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Interested in More Items?</h3>
           <p style="margin-bottom: 1.5rem;">Reach out to us with your interest in peg dolls or musical box miniatures, and we'll get back to you when they're available for order!</p>
-          <form class="order-checkout-form" data-category="more">
+          <form class="order-checkout-form" data-category="more" name="more-interest" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="more-interest" />
             <div class="form-group">
               <label for="more-name">Name *</label>
               <input type="text" id="more-name" name="name" required>
@@ -360,7 +365,7 @@
 
     // Handle order form submission
     document.querySelectorAll('.order-checkout-form').forEach(form => {
-      form.addEventListener('submit', function(e) {
+      form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         const category = this.dataset.category;
@@ -372,7 +377,7 @@
           return;
         }
         
-        const paymentLink = this.querySelector('.payment-link-field').value;
+        const paymentLink = this.querySelector('.payment-link-field')?.value || '';
         
         // Get form data for logging/tracking if needed
         const formData = new FormData(this);
@@ -390,8 +395,21 @@
           alert('Please enter a valid email address.');
           return;
         }
-        
-        // For 'more' category, just submit the form without payment link
+
+        try {
+          // Submit to Netlify before redirecting the customer to payment
+          await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+          });
+        } catch (error) {
+          console.error('Netlify form submission failed:', error);
+          alert('There was a problem submitting your order. Please try again.');
+          return;
+        }
+
+        // For 'more' category, just confirm after successful submission
         if (category === 'more') {
           alert('Thank you for your interest! We will contact you soon.');
           this.reset();
@@ -401,7 +419,7 @@
         // Log order data and redirect to payment
         console.log('Order submitted:', data);
         
-        // Redirect to payment link
+        // Redirect to payment link after Netlify submission succeeds
         if (paymentLink) {
           window.open(paymentLink, '_blank');
         }
