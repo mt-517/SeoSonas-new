@@ -134,6 +134,37 @@ function setupNavigationHighlight() {
   });
 }
 
+// More images show/hide functionality
+function setupMoreImagesToggle() {
+  const moreImagesContainers = document.querySelectorAll('.more-images-container');
+  
+  moreImagesContainers.forEach(container => {
+    const showButton = container.querySelector('.button-more-images.show');
+    const hideButtons = container.querySelectorAll('.button-more-images.hide');
+    const moreImagesDiv = container.querySelector('.more-images');
+    
+    // Show images button click
+    if (showButton) {
+      showButton.addEventListener('click', function() {
+        moreImagesDiv.classList.add('visible');
+        showButton.classList.add('hidden');
+        hideButtons.forEach(btn => btn.classList.add('visible'));
+      });
+    }
+    
+    // Hide images buttons click
+    hideButtons.forEach(hideButton => {
+      hideButton.addEventListener('click', function() {
+        moreImagesDiv.classList.remove('visible');
+        if (showButton) {
+          showButton.classList.remove('hidden');
+        }
+        hideButtons.forEach(btn => btn.classList.remove('visible'));
+      });
+    });
+  });
+}
+
 // Initialize all functionality on page load
 document.addEventListener('DOMContentLoaded', () => {
   setupOrderTabs();
@@ -142,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupFaeriesNavigation();
   setupFictionalCharactersNavigation();
   setupNavigationHighlight();
+  setupMoreImagesToggle();
 });
 
 // Utility function to create image placeholder
