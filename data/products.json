@@ -1,0 +1,734 @@
+[
+  {
+    "id": "autumn-fae",
+    "name": "Autumn Fae & Faery",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "As the leaves turn golden and crimson, the Autumn Fae emerge to celebrate the harvest season. These magical beings embody the transformation and abundance of fall, bringing warmth and gratitude to all they touch. The Autumn Fae remind us to appreciate the beauty of change and the gifts of the season."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "earth-faery",
+    "name": "Gaia – Earth Faery",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Gaia, the Earth Faery, is the guardian of all growing things. Connected to the soil, the stones, and the ancient roots beneath our feet, she brings grounding energy and stability. Gaia reminds us of our connection to Mother Earth and the importance of nurturing all life."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "halloween-fae",
+    "name": "Halloween Fae & Faery",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "As the veil between worlds grows thin, the Halloween Fae dance through the October nights. These playful spirits celebrate mystery, magic, and the supernatural. With mischievous grins and mysterious eyes, they invite us to embrace the shadows and discover the magic hidden in darkness."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "jack-frost",
+    "name": "Jack Frost Fae",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Jack Frost brings the first freeze of winter, painting the world in crystalline patterns. This chilly character creates intricate designs on windows and adorns nature with sparkling frost. Jack Frost represents the crisp beauty and transformation that winter brings."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "lochie-winter",
+    "name": "Lochie – Winter Fae",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Lochie, the Winter Fae, dwells in the deep cold and icy places. A guardian of winter's quiet magic, this fae brings peace in the stillness and beauty in the snow. Lochie reminds us that even in the coldest seasons, there is profound beauty and power to be found."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "marina-water",
+    "name": "Marina – Water Faery",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Marina, the Water Faery, dances across streams and dwells in the heart of the sea. This fluid and graceful spirit embodies flow, adaptability, and emotional depth. Marina carries the wisdom of the waters and invites us to embrace change and go with the currents of life."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "pan",
+    "name": "Pan",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Pan, the ancient deity of nature, brings wild freedom and untamed magic. With his pipes and mischievous spirit, Pan celebrates the primal forces of nature and encourages us to connect with our wild selves. He embodies joy, liberation, and the call of the forest."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "spring-fae",
+    "name": "Spring Fae & Faery",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "The Spring Fae burst forth with new life and renewal. These joyful beings dance among blooming flowers and celebrate the awakening of the earth. They bring hope, fresh beginnings, and the promise of growth. Spring Fae remind us that renewal and rebirth are always possible."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "summer-fae",
+    "name": "Summer Fae & Faery",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Summer Fae bask in the golden light and celebrate the season of abundance and joy. These radiant beings bring warmth, vitality, and celebration to all they encounter. With their bright energy and playful spirit, Summer Fae remind us to enjoy the abundance of life."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "thorn-thistle",
+    "name": "Thorn – Thistle Fae",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Thorn, the Thistle Fae, embodies protection and resilience. Prickly on the outside yet beautiful within, this fae teaches us about boundaries and inner strength. Thorn reminds us that protection is sometimes necessary and that beauty can exist alongside sharpness."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "willow-forest",
+    "name": "Willow – Forest Fae",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Willow, the Forest Fae, dwells among the ancient trees and groves. Graceful and wise, this fae carries the wisdom of the woods and the gentle strength of growing things. Willow reminds us to stay rooted while remaining flexible and resilient."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "winter-fae",
+    "name": "Winter Fae & Faery",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "The Winter Fae celebrate the magic of the cold season with crystalline beauty and quiet wonder. These serene beings bring peace, contemplation, and the beauty of stillness. Winter Fae remind us to slow down and find magic in the quiet, restful times."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "woody-forest",
+    "name": "Woody – Forest Fae",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Woody, a true creature of the forest, embodies the earthiness and strength of ancient woods. This fae is grounded, loyal, and connected to the deep magic of trees and woodland creatures. Woody reminds us to embrace our wild nature and find strength in our roots."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "poppy-and-her-sisters",
+    "name": "Poppy and Her Sisters",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "whisp-witch",
+    "name": "Whisp Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "ginny-witch",
+    "name": "Ginny Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "ruby-witch",
+    "name": "Ruby Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "yolanda-witch",
+    "name": "Yolanda Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "gertie-witch",
+    "name": "Gertie Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "hattie-witch",
+    "name": "Hattie Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "oona-witch",
+    "name": "Oona Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "crystal-witch",
+    "name": "Crystal Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "rowena-witch",
+    "name": "Rowena Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "wanda-witch",
+    "name": "Wanda Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "lily-witch",
+    "name": "Lily Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "wendy-witch",
+    "name": "Wendy Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "wren-witch",
+    "name": "Wren Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "betina-witch",
+    "name": "Betina Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "gretel-witch",
+    "name": "Gretel Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "wisdom-witch",
+    "name": "Wisdom Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "arwyn-witch",
+    "name": "Arwyn Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "paige-witch",
+    "name": "Paige Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "winnie-witch",
+    "name": "Winnie Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "willow-witch",
+    "name": "Willow Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "rose-witch",
+    "name": "Rose Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "elsa-witch",
+    "name": "Elsa Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "yenefer-witch",
+    "name": "Yenefer Witch",
+    "category": "wish-witches",
+    "page": "wish-witches.html",
+    "orderTab": "wish-witches",
+    "blocks": [],
+    "active": true
+  },
+  {
+    "id": "black-kitchen-witch",
+    "name": "Black Kitchen Witch",
+    "category": "kitchen-witches",
+    "page": "kitchen-witches.html",
+    "orderTab": "kitchen-witches",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "✨ Protection & Mystery"
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "blue-kitchen-witch",
+    "name": "Blue Kitchen Witch",
+    "category": "kitchen-witches",
+    "page": "kitchen-witches.html",
+    "orderTab": "kitchen-witches",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "💙 Calm & Clarity"
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "brown-kitchen-witch",
+    "name": "Brown Kitchen Witch",
+    "category": "kitchen-witches",
+    "page": "kitchen-witches.html",
+    "orderTab": "kitchen-witches",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "🌍 Grounding & Stability"
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "green-kitchen-witch",
+    "name": "Green Kitchen Witch",
+    "category": "kitchen-witches",
+    "page": "kitchen-witches.html",
+    "orderTab": "kitchen-witches",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "🌿 Healing & Growth"
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "orange-kitchen-witch",
+    "name": "Orange Kitchen Witch",
+    "category": "kitchen-witches",
+    "page": "kitchen-witches.html",
+    "orderTab": "kitchen-witches",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "☀️ Joy & Creativity"
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "pink-kitchen-witch",
+    "name": "Pink Kitchen Witch",
+    "category": "kitchen-witches",
+    "page": "kitchen-witches.html",
+    "orderTab": "kitchen-witches",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "💖 Love & Kindness"
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "red-kitchen-witch",
+    "name": "Red Kitchen Witch",
+    "category": "kitchen-witches",
+    "page": "kitchen-witches.html",
+    "orderTab": "kitchen-witches",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "🔥 Passion & Energy"
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "yellow-kitchen-witch",
+    "name": "Yellow Kitchen Witch",
+    "category": "kitchen-witches",
+    "page": "kitchen-witches.html",
+    "orderTab": "kitchen-witches",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "✨ Positivity & Light"
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "wizarding-folk",
+    "name": "Wizarding Folk – Harry Potter",
+    "category": "fictional-magical-characters",
+    "page": "fictional-magical-characters.html",
+    "orderTab": "fictional-characters",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Step into the wizarding world with our collection of beloved Harry Potter characters. Each figure represents the magical faculty and staff that bring Hogwarts to life:"
+      },
+      {
+        "type": "li",
+        "text": "• Head of Herbology"
+      },
+      {
+        "type": "li",
+        "text": "• Head of Potions"
+      },
+      {
+        "type": "li",
+        "text": "• Headmaster"
+      },
+      {
+        "type": "li",
+        "text": "• Keeper of Keys and Grounds"
+      },
+      {
+        "type": "li",
+        "text": "• Professor of the Dark Arts"
+      },
+      {
+        "type": "li",
+        "text": "• Scottish Head of Transfiguration"
+      },
+      {
+        "type": "p",
+        "text": "Perfect for Harry Potter fans and collectors who want to bring a piece of the magical world home."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "middle-earth",
+    "name": "Middle Earth – Lord of the Rings",
+    "category": "fictional-magical-characters",
+    "page": "fictional-magical-characters.html",
+    "orderTab": "fictional-characters",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Journey to Middle Earth with our iconic characters from J.R.R. Tolkien's legendary world:"
+      },
+      {
+        "type": "li",
+        "text": "• Gandalf – The wise grey wizard"
+      },
+      {
+        "type": "li",
+        "text": "• Radagast – The brown wizard of nature"
+      },
+      {
+        "type": "li",
+        "text": "• Sauron – The dark lord"
+      },
+      {
+        "type": "p",
+        "text": "Each figure captures the essence of these powerful magical beings that shaped the fate of Middle Earth."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "christmas-family",
+    "name": "Christmas Family – A Magical Holiday",
+    "category": "fictional-magical-characters",
+    "page": "fictional-magical-characters.html",
+    "orderTab": "fictional-characters",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Bring the magic of Christmas home with our festive family characters:"
+      },
+      {
+        "type": "li",
+        "text": "• Father Christmas (Santa)"
+      },
+      {
+        "type": "li",
+        "text": "• Joy – The spirit of happiness"
+      },
+      {
+        "type": "li",
+        "text": "• Mrs Christmas – The heart of the season"
+      },
+      {
+        "type": "li",
+        "text": "• Noël – The celebration personified"
+      },
+      {
+        "type": "p",
+        "text": "Perfect for holiday decorations or year-round Christmas magic."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "addams-family",
+    "name": "The Addams Family – Delightfully Dark",
+    "category": "fictional-magical-characters",
+    "page": "fictional-magical-characters.html",
+    "orderTab": "fictional-characters",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Embrace the peculiar charm of the Addams Family. Our collection captures the delightfully dark and wonderfully witchy essence of this beloved family. From their gothic mansion to their eccentric personalities, each character embodies the unique magic that makes the Addams Family unforgettable."
+      },
+      {
+        "type": "p",
+        "text": "Perfect for those who appreciate the darker side of magic and find beauty in the unusual."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "wicked",
+    "name": "Wicked – The Untold Story",
+    "category": "fictional-magical-characters",
+    "page": "fictional-magical-characters.html",
+    "orderTab": "fictional-characters",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Discover the untold story of the witches behind the wizard with our Wicked collection. Featuring the complex, powerful, and inspiring characters from this beloved musical and book series, these figures celebrate the witches who defy gravity and challenge our perceptions."
+      },
+      {
+        "type": "p",
+        "text": "Whether green, popular, or something in between – find the witch that speaks to your heart."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "hocus-pocus",
+    "name": "Hocus Pocus – Three Witches of Magic",
+    "category": "fictional-magical-characters",
+    "page": "fictional-magical-characters.html",
+    "orderTab": "fictional-characters",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Come little children... Our Hocus Pocus collection brings the mischievous, magical, and hilarious Sanderson Sisters to life. These three witches, with their cauldron and spell book, have enchanted audiences for generations with their over-the-top antics and magical mishaps."
+      },
+      {
+        "type": "p",
+        "text": "Perfect for Halloween lovers and fans of this spooky, comedic classic."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "practical-magic",
+    "name": "Practical Magic – Love, Magic & Destiny",
+    "category": "fictional-magical-characters",
+    "page": "fictional-magical-characters.html",
+    "orderTab": "fictional-characters",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Celebrate the beautiful magic of family, love, and destiny with characters inspired by Practical Magic. This enchanting film tells the story of witches bound by family magic, love, and the consequences of their choices. Our collection captures the intimate and powerful magic that flows through this beloved story."
+      },
+      {
+        "type": "p",
+        "text": "Perfect for those who believe that true magic lies in the connections we make with those we love."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "peg-dolls",
+    "name": "Peg Dolls",
+    "category": "more",
+    "page": "more.html",
+    "orderTab": "more",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Our handcrafted peg dolls are a celebration of simplicity and creativity. Created from wooden pegs and decorated with love, these charming figures capture the essence of traditional toy-making with a magical twist."
+      },
+      {
+        "type": "p",
+        "text": "Each peg doll is unique, featuring hand-painted details and dressed in carefully selected vintage fabrics and embellishments. These beloved classic toys are perfect for imaginative play, collections, or as thoughtful gifts that celebrate the art of handmade magic."
+      },
+      {
+        "type": "p",
+        "text": "Whether you're looking for a whimsical playmate or a nostalgic treasure, our peg dolls bring the warmth and wonder of childhood magic to any age."
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "musical-boxes",
+    "name": "Musical Box Miniatures",
+    "category": "more",
+    "page": "more.html",
+    "orderTab": "more",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Our enchanting musical box miniatures combine the magic of movement and melody. These delicate, intricate creations feature handcrafted figures that dance and twirl as gentle music plays, creating an atmosphere of wonder and nostalgia."
+      },
+      {
+        "type": "p",
+        "text": "Each musical box miniature is a work of art, combining careful craftsmanship with the mechanics of traditional music boxes. Perfect as collectibles, display pieces, or special gifts, these creations bring the timeless magic of classic music boxes into a miniature format."
+      },
+      {
+        "type": "p",
+        "text": "Whether you collect music boxes, love miniatures, or simply appreciate beautiful handmade items, our musical box miniatures are sure to enchant and delight with their delicate magic and melodic charm."
+      }
+    ],
+    "active": true
+  }
+]

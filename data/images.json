@@ -1,0 +1,314 @@
+{
+  "faeries/autumn-fae": {
+    "name": "Autumn Fae & Faery",
+    "href": "faeries.html#autumn-fae",
+    "images": [
+      "images/faeries/autumn-fae/img1.jpg"
+    ]
+  },
+  "faeries/earth-faery": {
+    "name": "Gaia – Earth Faery",
+    "href": "faeries.html#earth-faery",
+    "images": []
+  },
+  "faeries/halloween-fae": {
+    "name": "Halloween Fae & Faery",
+    "href": "faeries.html#halloween-fae",
+    "images": []
+  },
+  "faeries/jack-frost": {
+    "name": "Jack Frost Fae",
+    "href": "faeries.html#jack-frost",
+    "images": []
+  },
+  "faeries/lochie-winter": {
+    "name": "Lochie – Winter Fae",
+    "href": "faeries.html#lochie-winter",
+    "images": []
+  },
+  "faeries/marina-water": {
+    "name": "Marina – Water Faery",
+    "href": "faeries.html#marina-water",
+    "images": []
+  },
+  "faeries/pan": {
+    "name": "Pan",
+    "href": "faeries.html#pan",
+    "images": []
+  },
+  "faeries/spring-fae": {
+    "name": "Spring Fae & Faery",
+    "href": "faeries.html#spring-fae",
+    "images": []
+  },
+  "faeries/summer-fae": {
+    "name": "Summer Fae & Faery",
+    "href": "faeries.html#summer-fae",
+    "images": [
+      "images/faeries/summer-fae/img1.jpg",
+      "images/faeries/summer-fae/img2.jpeg",
+      "images/faeries/summer-fae/img3.jpg"
+    ]
+  },
+  "faeries/thorn-thistle": {
+    "name": "Thorn – Thistle Fae",
+    "href": "faeries.html#thorn-thistle",
+    "images": []
+  },
+  "faeries/willow-forest": {
+    "name": "Willow – Forest Fae",
+    "href": "faeries.html#willow-forest",
+    "images": []
+  },
+  "faeries/winter-fae": {
+    "name": "Winter Fae & Faery",
+    "href": "faeries.html#winter-fae",
+    "images": []
+  },
+  "faeries/woody-forest": {
+    "name": "Woody – Forest Fae",
+    "href": "faeries.html#woody-forest",
+    "images": []
+  },
+  "wish-witches/poppy-and-her-sisters": {
+    "name": "Poppy and Her Sisters",
+    "href": "wish-witches.html#poppy-and-her-sisters",
+    "images": []
+  },
+  "wish-witches/whisp-witch": {
+    "name": "Whisp Witch",
+    "href": "wish-witches.html#whisp-witch",
+    "images": []
+  },
+  "wish-witches/ginny-witch": {
+    "name": "Ginny Witch",
+    "href": "wish-witches.html#ginny-witch",
+    "images": []
+  },
+  "wish-witches/ruby-witch": {
+    "name": "Ruby Witch",
+    "href": "wish-witches.html#ruby-witch",
+    "images": []
+  },
+  "wish-witches/yolanda-witch": {
+    "name": "Yolanda Witch",
+    "href": "wish-witches.html#yolanda-witch",
+    "images": []
+  },
+  "wish-witches/gertie-witch": {
+    "name": "Gertie Witch",
+    "href": "wish-witches.html#gertie-witch",
+    "images": []
+  },
+  "wish-witches/hattie-witch": {
+    "name": "Hattie Witch",
+    "href": "wish-witches.html#hattie-witch",
+    "images": []
+  },
+  "wish-witches/oona-witch": {
+    "name": "Oona Witch",
+    "href": "wish-witches.html#oona-witch",
+    "images": []
+  },
+  "wish-witches/crystal-witch": {
+    "name": "Crystal Witch",
+    "href": "wish-witches.html#crystal-witch",
+    "images": []
+  },
+  "wish-witches/rowena-witch": {
+    "name": "Rowena Witch",
+    "href": "wish-witches.html#rowena-witch",
+    "images": []
+  },
+  "wish-witches/wanda-witch": {
+    "name": "Wanda Witch",
+    "href": "wish-witches.html#wanda-witch",
+    "images": []
+  },
+  "wish-witches/lily-witch": {
+    "name": "Lily Witch",
+    "href": "wish-witches.html#lily-witch",
+    "images": []
+  },
+  "wish-witches/wendy-witch": {
+    "name": "Wendy Witch",
+    "href": "wish-witches.html#wendy-witch",
+    "images": []
+  },
+  "wish-witches/wren-witch": {
+    "name": "Wren Witch",
+    "href": "wish-witches.html#wren-witch",
+    "images": []
+  },
+  "wish-witches/betina-witch": {
+    "name": "Betina Witch",
+    "href": "wish-witches.html#betina-witch",
+    "images": []
+  },
+  "wish-witches/gretel-witch": {
+    "name": "Gretel Witch",
+    "href": "wish-witches.html#gretel-witch",
+    "images": []
+  },
+  "wish-witches/wisdom-witch": {
+    "name": "Wisdom Witch",
+    "href": "wish-witches.html#wisdom-witch",
+    "images": []
+  },
+  "wish-witches/arwyn-witch": {
+    "name": "Arwyn Witch",
+    "href": "wish-witches.html#arwyn-witch",
+    "images": []
+  },
+  "wish-witches/paige-witch": {
+    "name": "Paige Witch",
+    "href": "wish-witches.html#paige-witch",
+    "images": []
+  },
+  "wish-witches/winnie-witch": {
+    "name": "Winnie Witch",
+    "href": "wish-witches.html#winnie-witch",
+    "images": []
+  },
+  "wish-witches/willow-witch": {
+    "name": "Willow Witch",
+    "href": "wish-witches.html#willow-witch",
+    "images": []
+  },
+  "wish-witches/rose-witch": {
+    "name": "Rose Witch",
+    "href": "wish-witches.html#rose-witch",
+    "images": []
+  },
+  "wish-witches/elsa-witch": {
+    "name": "Elsa Witch",
+    "href": "wish-witches.html#elsa-witch",
+    "images": []
+  },
+  "wish-witches/yenefer-witch": {
+    "name": "Yenefer Witch",
+    "href": "wish-witches.html#yenefer-witch",
+    "images": []
+  },
+  "kitchen-witches/black-kitchen-witch": {
+    "name": "Black Kitchen Witch",
+    "href": "kitchen-witches.html#black-kitchen-witch",
+    "images": []
+  },
+  "kitchen-witches/blue-kitchen-witch": {
+    "name": "Blue Kitchen Witch",
+    "href": "kitchen-witches.html#blue-kitchen-witch",
+    "images": []
+  },
+  "kitchen-witches/brown-kitchen-witch": {
+    "name": "Brown Kitchen Witch",
+    "href": "kitchen-witches.html#brown-kitchen-witch",
+    "images": []
+  },
+  "kitchen-witches/green-kitchen-witch": {
+    "name": "Green Kitchen Witch",
+    "href": "kitchen-witches.html#green-kitchen-witch",
+    "images": []
+  },
+  "kitchen-witches/orange-kitchen-witch": {
+    "name": "Orange Kitchen Witch",
+    "href": "kitchen-witches.html#orange-kitchen-witch",
+    "images": []
+  },
+  "kitchen-witches/pink-kitchen-witch": {
+    "name": "Pink Kitchen Witch",
+    "href": "kitchen-witches.html#pink-kitchen-witch",
+    "images": []
+  },
+  "kitchen-witches/red-kitchen-witch": {
+    "name": "Red Kitchen Witch",
+    "href": "kitchen-witches.html#red-kitchen-witch",
+    "images": []
+  },
+  "kitchen-witches/yellow-kitchen-witch": {
+    "name": "Yellow Kitchen Witch",
+    "href": "kitchen-witches.html#yellow-kitchen-witch",
+    "images": []
+  },
+  "fictional-magical-characters/wizarding-folk": {
+    "name": "Wizarding Folk – Harry Potter",
+    "href": "fictional-magical-characters.html#wizarding-folk",
+    "images": []
+  },
+  "fictional-magical-characters/middle-earth": {
+    "name": "Middle Earth – Lord of the Rings",
+    "href": "fictional-magical-characters.html#middle-earth",
+    "images": []
+  },
+  "fictional-magical-characters/christmas-family": {
+    "name": "Christmas Family – A Magical Holiday",
+    "href": "fictional-magical-characters.html#christmas-family",
+    "images": []
+  },
+  "fictional-magical-characters/addams-family": {
+    "name": "The Addams Family – Delightfully Dark",
+    "href": "fictional-magical-characters.html#addams-family",
+    "images": []
+  },
+  "fictional-magical-characters/wicked": {
+    "name": "Wicked – The Untold Story",
+    "href": "fictional-magical-characters.html#wicked",
+    "images": []
+  },
+  "fictional-magical-characters/hocus-pocus": {
+    "name": "Hocus Pocus – Three Witches of Magic",
+    "href": "fictional-magical-characters.html#hocus-pocus",
+    "images": []
+  },
+  "fictional-magical-characters/practical-magic": {
+    "name": "Practical Magic – Love, Magic & Destiny",
+    "href": "fictional-magical-characters.html#practical-magic",
+    "images": []
+  },
+  "more/peg-dolls": {
+    "name": "Peg Dolls",
+    "href": "more.html#peg-dolls",
+    "images": []
+  },
+  "more/musical-boxes": {
+    "name": "Musical Box Miniatures",
+    "href": "more.html#musical-boxes",
+    "images": []
+  },
+  "faeries/collection": {
+    "name": "faeries",
+    "href": "faeries.html",
+    "images": [
+      "images/faeries/collection/img1.jpg"
+    ]
+  },
+  "wish-witches/collection": {
+    "name": "wish witches",
+    "href": "wish-witches.html",
+    "images": [
+      "images/wish-witches/collection/img1.jpg",
+      "images/wish-witches/collection/img2.jpg"
+    ]
+  },
+  "kitchen-witches/collection": {
+    "name": "kitchen witches",
+    "href": "kitchen-witches.html",
+    "images": [
+      "images/kitchen-witches/collection/img1.jpg"
+    ]
+  },
+  "fictional-magical-characters/collection": {
+    "name": "fictional magical characters",
+    "href": "fictional-magical-characters.html",
+    "images": [
+      "images/fictional-magical-characters/collection/img1.jpg"
+    ]
+  },
+  "more/collection": {
+    "name": "more",
+    "href": "more.html",
+    "images": [
+      "images/more/collection/img1.jpg"
+    ]
+  }
+}

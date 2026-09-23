@@ -1,7 +1,10 @@
 // Load and inject header and footer from snippets/header-footer.html
 document.addEventListener('DOMContentLoaded', function() {
   fetch('./snippets/header-footer.html')
-    .then(response => response.text())
+    .then(response => {
+      if (!response.ok) throw new Error('Could not load navigation');
+      return response.text();
+    })
     .then(html => {
       // Parse the fetched HTML
       const parser = new DOMParser();
@@ -14,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
       if (header) {
         // Clone the header to avoid moving the original
         const headerClone = header.cloneNode(true);
+        const currentPage = location.pathname.split('/').pop() || 'index.html';
+        headerClone.querySelectorAll('a').forEach(link => {
+          if (link.getAttribute('href') === currentPage) link.setAttribute('aria-current', 'page');
+        });
         // Insert header at the beginning of body
         document.body.insertBefore(headerClone, document.body.firstChild);
       }

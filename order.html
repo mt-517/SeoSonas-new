@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order - SeoSonas</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
   <style>
     .radio-group {
       background-color: white;
@@ -337,6 +340,7 @@
   </main>
 
   <script src="js/script.js"></script>
+  <script src="js/galleries.js"></script>
   <script src="js/header-footer-injector.js"></script>
   <script>
     // Make entire .radio-item div clickable to select radio input
@@ -398,11 +402,12 @@
 
         try {
           // Submit to Netlify before redirecting the customer to payment
-          await fetch('/', {
+          const response = await fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams(formData).toString()
           });
+          if (!response.ok) throw new Error(`Submission failed: ${response.status}`);
         } catch (error) {
           console.error('Netlify form submission failed:', error);
           alert('There was a problem submitting your order. Please try again.');
@@ -416,12 +421,10 @@
           return;
         }
         
-        // Log order data and redirect to payment
-        console.log('Order submitted:', data);
         
         // Redirect to payment link after Netlify submission succeeds
         if (paymentLink) {
-          window.open(paymentLink, '_blank');
+          window.location.assign(paymentLink);
         }
       });
     });

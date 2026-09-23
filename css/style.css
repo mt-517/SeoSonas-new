@@ -69,9 +69,9 @@ header {
   background-color: var(--accent-color);
   color: white;
   padding: 1rem 0;
-  /* position: sticky; */
-  /* top: 0; */
-  /* z-index: 1000; */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -816,4 +816,56 @@ footer {
 .more-image:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* A bookish, handcrafted voice for the collection. */
+:root {
+  --heading-font: 'Cormorant Garamond', 'Palatino Linotype', Palatino, Georgia, serif;
+  --body-font: 'Lora', Georgia, serif;
+}
+body { font-family: var(--body-font); font-size: 1rem; line-height: 1.8; }
+h1, h2, h3, h4, h5, h6, .header-logo a, .product-name {
+  font-family: var(--heading-font);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -.015em;
+}
+h1 { font-size: clamp(2.7rem, 6vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: 1.9rem; }
+.header-logo a { font-size: 2.2rem; }
+button, input, textarea, select { font: inherit; }
+button, .order-button, .read-more-link, .nav-links { font-size: .9rem; }
+.product-name { font-size: 1.65rem; }
+section[id], article[id], .order-section { scroll-margin-top: 12rem; }
+:focus-visible { outline: 3px solid var(--primary-color); outline-offset: 4px; }
+footer :focus-visible, header :focus-visible { outline-color: white; }
+.order-button:hover { color: white; background: var(--primary-color); }
+.product-order { margin-top: 1rem; padding: .65rem 1.2rem; line-height: 1.5; }
+.catalogue-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin: 1.5rem 1rem 3rem; }
+.catalogue-nav a { padding: .4rem .9rem; border: 1px solid var(--border-color); border-radius: 2rem; font-size: .9rem; }
+.catalogue-nav a:hover { background: var(--primary-color); color: white; }
+.product-gallery, .collection-gallery { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+[data-gallery] a { display: block; overflow: hidden; border-radius: .5rem; }
+[data-gallery] img { display: block; width: 100%; height: 100%; max-height: 480px; object-fit: contain; background: var(--light-bg); }
+.product-card .product-gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
+.product-card .product-gallery a { flex: 0 0 100%; scroll-snap-align: start; }
+.product-card .product-gallery img { height: 250px; }
+.product-card .gallery-status { width: 100%; }
+.gallery-status { display: grid; place-items: center; min-height: 180px; padding: 1.5rem; text-align: center; font-style: italic; font-size: .9rem; color: var(--primary-color); background: var(--light-bg); border-radius: .5rem; margin: 0; }
+.product-pictures { margin-top: 1.5rem; }
+.product-pictures summary { cursor: pointer; padding: .6rem 0; font-size: .9rem; }
+.product-pictures[open] summary { margin-bottom: 1rem; }
+.faery-text ul { padding-left: 1.4rem; }
+.nav-links { flex-wrap: wrap; gap: .5rem 1.5rem; }
+.nav-links a[aria-current="page"] { text-decoration: underline; text-underline-offset: .3em; }
+.order-section[hidden] { display: none; }
+@media (max-width: 768px) {
+  .product-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+  .faery-section { padding: 1.25rem; }
+  .faery-content > .product-gallery { margin-bottom: 1.5rem; }
+  .header-logo a { font-size: 1.8rem; }
+  .header-order .order-button { padding: .3rem 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }

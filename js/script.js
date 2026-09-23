@@ -1,189 +1,58 @@
-// Order page tab functionality
 function setupOrderTabs() {
-  const tabButtons = document.querySelectorAll('.order-tab-button');
-  const orderSections = document.querySelectorAll('.order-section');
-
-  tabButtons.forEach(button => {
+  const buttons = [...document.querySelectorAll('.order-tab-button')];
+  if (!buttons.length) return;
+  const sections = [...document.querySelectorAll('.order-section')];
+  document.querySelector('.order-tabs').setAttribute('role', 'tablist');
+  document.querySelector('.order-tabs').setAttribute('aria-label', 'Product category');
+  function activate(id) {
+    const selected = buttons.find(button => button.dataset.tab === id) || buttons[0];
+    buttons.forEach(button => {
+      const active = button === selected;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-selected', String(active));
+      button.tabIndex = active ? 0 : -1;
+    });
+    sections.forEach(section => {
+      const active = section.id === selected.dataset.tab;
+      section.classList.toggle('active', active);
+      section.hidden = !active;
+    });
+  }
+  buttons.forEach((button, index) => {
+    button.id = `tab-${button.dataset.tab}`;
+    button.setAttribute('role', 'tab');
+    button.setAttribute('aria-controls', button.dataset.tab);
+    const section = document.getElementById(button.dataset.tab);
+    section.setAttribute('role', 'tabpanel');
+    section.setAttribute('aria-labelledby', button.id);
     button.addEventListener('click', () => {
-      const tabId = button.getAttribute('data-tab');
-
-      // Remove active class from all buttons and sections
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      orderSections.forEach(section => section.classList.remove('active'));
-
-      // Add active class to clicked button and corresponding section
-      button.classList.add('active');
-      const activeSection = document.getElementById(tabId);
-      if (activeSection) {
-        activeSection.classList.add('active');
-      }
+      history.pushState(null, '', `#${button.dataset.tab}`);
+      activate(button.dataset.tab);
+    });
+    button.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % buttons.length;
+      if (event.key === 'ArrowLeft') next = (index + buttons.length - 1) % buttons.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = buttons.length - 1;
+      if (next !== undefined) { event.preventDefault(); buttons[next].focus(); buttons[next].click(); }
     });
   });
-
-  // Set first tab as active by default
-  if (tabButtons.length > 0) {
-    tabButtons[0].click();
+  const sync = () => activate(location.hash.slice(1));
+  window.addEventListener('hashchange', sync);
+  window.addEventListener('popstate', sync);
+  sync();
+  const productId = new URLSearchParams(location.search).get('product');
+  if (productId) {
+    fetch('data/products.json').then(response => {
+      if (!response.ok) throw new Error('Could not load product');
+      return response.json();
+    }).then(products => {
+      const product = products.find(p => p.active && p.id === productId);
+      if (!product) return;
+      const field = document.querySelector(`#${product.orderTab} textarea[name="description"]`);
+      if (field && !field.value) field.value = `I would like to order: ${product.name}.`;
+    }).catch(console.error);
   }
 }
-
-// Smooth scroll for anchor links
-function setupSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-}
-
-// Form submission handling
-function setupFormHandlers() {
-  const forms = document.querySelectorAll('.order-form');
-  
-  forms.forEach(form => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
-      
-      // Validate required fields
-      if (!data.name || !data.email) {
-        alert('Please fill in all required fields');
-        return;
-      }
-      
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(data.email)) {
-        alert('Please enter a valid email address');
-        return;
-      }
-      
-      // Log form data (in production, send to server)
-      console.log('Order submitted:', data);
-      alert('Thank you for your order! We will contact you soon.');
-      form.reset();
-    });
-  });
-}
-
-// Initialize faeries navigation (for faeries.html)
-function setupFaeriesNavigation() {
-  const iconItems = document.querySelectorAll('.faeries-icon-item');
-  
-  iconItems.forEach(item => {
-    item.addEventListener('click', function() {
-      const targetId = this.getAttribute('data-target');
-      const targetSection = document.getElementById(targetId);
-      
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Highlight the clicked icon
-        iconItems.forEach(icon => icon.style.opacity = '0.6');
-        this.style.opacity = '1';
-      }
-    });
-  });
-}
-
-// Initialize fictional characters navigation
-function setupFictionalCharactersNavigation() {
-  const iconItems = document.querySelectorAll('.characters-icon-item');
-  
-  iconItems.forEach(item => {
-    item.addEventListener('click', function() {
-      const targetId = this.getAttribute('data-target');
-      const targetSection = document.getElementById(targetId);
-      
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        iconItems.forEach(icon => icon.style.opacity = '0.6');
-        this.style.opacity = '1';
-      }
-    });
-  });
-}
-
-// Navigation highlight on scroll
-function setupNavigationHighlight() {
-  const navLinks = document.querySelectorAll('.nav-links a');
-  
-  window.addEventListener('scroll', () => {
-    let current = '';
-    
-    document.querySelectorAll('section').forEach(section => {
-      const sectionTop = section.offsetTop;
-      if (pageYOffset >= sectionTop - 200) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').slice(1) === current) {
-        link.classList.add('active');
-      }
-    });
-  });
-}
-
-// More images show/hide functionality
-function setupMoreImagesToggle() {
-  const moreImagesContainers = document.querySelectorAll('.more-images-container');
-  
-  moreImagesContainers.forEach(container => {
-    const showButton = container.querySelector('.button-more-images.show');
-    const hideButtons = container.querySelectorAll('.button-more-images.hide');
-    const moreImagesDiv = container.querySelector('.more-images');
-    
-    // Show images button click
-    if (showButton) {
-      showButton.addEventListener('click', function() {
-        moreImagesDiv.classList.add('visible');
-        showButton.classList.add('hidden');
-        hideButtons.forEach(btn => btn.classList.add('visible'));
-      });
-    }
-    
-    // Hide images buttons click
-    hideButtons.forEach(hideButton => {
-      hideButton.addEventListener('click', function() {
-        moreImagesDiv.classList.remove('visible');
-        if (showButton) {
-          showButton.classList.remove('hidden');
-        }
-        hideButtons.forEach(btn => btn.classList.remove('visible'));
-      });
-    });
-  });
-}
-
-// Initialize all functionality on page load
-document.addEventListener('DOMContentLoaded', () => {
-  setupOrderTabs();
-  setupSmoothScroll();
-  setupFormHandlers();
-  setupFaeriesNavigation();
-  setupFictionalCharactersNavigation();
-  setupNavigationHighlight();
-  setupMoreImagesToggle();
-});
-
-// Utility function to create image placeholder
-function getImagePlaceholder(category = 'image') {
-  const placeholders = {
-    faery: '🧚',
-    witch: '🧙‍♀️',
-    character: '✨',
-    image: '🖼️'
-  };
-  
-  return placeholders[category] || placeholders.image;
-}
+document.addEventListener('DOMContentLoaded', setupOrderTabs);
