@@ -869,3 +869,12 @@ footer :focus-visible, header :focus-visible { outline-color: white; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* Search-friendly breadcrumbs and stable photograph space. */
+.breadcrumbs { margin: 1rem; font-size: .85rem; display: flex; flex-wrap: wrap; gap: .5rem; }
+.breadcrumbs a { text-decoration: underline; text-underline-offset: .2em; }
+.product-gallery img, .collection-gallery img, .section-image [data-gallery] img { aspect-ratio: 4 / 3; }
+.hero h1 { font-size: clamp(2.3rem, 5vw, 4rem); }
+.hero-text { padding: 1rem; }
+.hero-subtitle { max-width: 48rem; margin: 1rem auto; }
+.hero h1 { color: #fff7e8; }

@@ -1,6 +1,7 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { buildSEO } from './seo.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const categories = ['faeries', 'wish-witches', 'kitchen-witches', 'fictional-magical-characters', 'more'];
@@ -56,6 +57,7 @@ export async function build() {
     if (!pattern.test(source)) throw new Error(`Missing catalogue markers in ${file}`);
     await writeFile(file, source.replace(pattern, (_, start, end) => `${start}\n${markup}\n${end}`));
   }
+  await buildSEO(root, manifest);
   console.log(`Built ${products.filter(p=>p.active).length} products and ${Object.keys(manifest).length} image folders.`);
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) await build();

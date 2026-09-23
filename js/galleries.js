@@ -1,7 +1,11 @@
 // Reuse a folder anywhere: data-gallery="faeries/autumn-fae" data-count="0".
 // 0 means all; positive integers select the first N naturally sorted filenames.
 async function setupGalleries() {
-  const containers = document.querySelectorAll('[data-gallery]');
+  const containers = document.querySelectorAll('[data-gallery]:not([data-gallery-rendered])');
+  document.querySelectorAll('.product-pictures').forEach(details => {
+    const gallery = details.querySelector('[data-gallery-rendered]');
+    if (gallery) details.hidden = gallery.querySelectorAll('img').length < 2;
+  });
   if (!containers.length) return;
   try {
     const response = await fetch('data/images.json');

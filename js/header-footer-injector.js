@@ -1,36 +1,9 @@
-// Load and inject header and footer from snippets/header-footer.html
-document.addEventListener('DOMContentLoaded', function() {
-  fetch('./snippets/header-footer.html')
-    .then(response => {
-      if (!response.ok) throw new Error('Could not load navigation');
-      return response.text();
-    })
-    .then(html => {
-      // Parse the fetched HTML
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      
-      // Extract header and footer elements
-      const header = doc.querySelector('header');
-      const footer = doc.querySelector('footer');
-      
-      if (header) {
-        // Clone the header to avoid moving the original
-        const headerClone = header.cloneNode(true);
-        const currentPage = location.pathname.split('/').pop() || 'index.html';
-        headerClone.querySelectorAll('a').forEach(link => {
-          if (link.getAttribute('href') === currentPage) link.setAttribute('aria-current', 'page');
-        });
-        // Insert header at the beginning of body
-        document.body.insertBefore(headerClone, document.body.firstChild);
-      }
-      
-      if (footer) {
-        // Clone the footer to avoid moving the original
-        const footerClone = footer.cloneNode(true);
-        // Append footer at the end of body
-        document.body.appendChild(footerClone);
-      }
-    })
-    .catch(error => console.error('Error loading header/footer:', error));
+// Shared navigation is rendered at build time so it works without JavaScript.
+document.addEventListener('DOMContentLoaded', () => {
+  const current = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('header a').forEach(link => {
+    if (link.getAttribute('href') === current || link.getAttribute('href') === current + '.html') {
+      link.setAttribute('aria-current', 'page');
+    }
+  });
 });

@@ -20,7 +20,7 @@ Supported images: WebP, AVIF, JPEG, PNG and GIF. Names sort naturally: `img1`, `
 
 `data-count="1"` shows the first photograph, `2` the first two, and `0` all photographs. Each generated image links to `faeries.html#autumn-fae`. Use a data attribute rather than an HTML `id` so the same gallery can appear several times without duplicate IDs. The product section itself has `id="autumn-fae"`.
 
-Include `js/galleries.js` on any new page. Current pages already include it. JavaScript and HTTP hosting are needed to load gallery images; opening HTML directly with `file://` will not work. Product descriptions and order links are generated as normal HTML, so remain readable without JavaScript. Empty folders display “Photographs coming soon”; all-photo disclosures only appear when there are multiple photographs.
+Include `js/galleries.js` on any new page. Current pages already include it. The build now renders photographs, navigation, descriptions and order links as normal HTML, so they are readable without JavaScript. Preview over HTTP to test interactive features. JavaScript can still populate new unbuilt gallery elements from the image index. Empty folders display “Photographs coming soon”; JavaScript hides all-photo disclosures when there are fewer than two photographs.
 
 `data/images.json` is generated. Do not hand-edit it. A browser cannot list the contents of a folder on a static Netlify site, so the build does this once and browsers read the resulting index.
 
@@ -79,3 +79,22 @@ Official references (checked September 2026):
 ## Verification
 
 `npm test` checks natural filename sorting, folder discovery, unsupported files, empty folders, catalogue validation, every product's order destination and gallery link, and repeatable builds. Live Netlify Forms and Lopay need deployment-level verification.
+
+
+## Search visibility
+
+`data/site.json` holds the confirmed production domain, https://seosonas.co.uk, and the Etsy/Facebook profiles. The build adds unique titles/descriptions, canonical links, social sharing previews, Organization/WebSite/CollectionPage and breadcrumb structured data, static navigation and gallery photos, and a page-and-image sitemap. Metadata wording is maintained in `scripts/seo.mjs`.
+
+The home page uses `/` as canonical; collections retain their existing `.html` URLs (the live faeries URL returned HTTP 200 during checks). Product section anchors are not separate indexable pages and are not separate sitemap entries. No unverified ratings, stock availability, shipping promises or product offer prices have been added to structured data. Individual product rich results would require a later product-detail-page design and verified offer data.
+
+The order form uses `noindex, follow` to keep form/query-string variants out of search; shoppers reach it from indexed collections. Netlify deploy previews and branch deploys also receive `noindex`; production pages remain indexable. Supporting JSON/snippet files carry noindex response headers. `robots.txt` allows crawling so crawlers can see those directives. Netlify serves `404.html` for missing pages with a 404 response.
+
+After deploying:
+
+1. Verify the domain in Google Search Console (owner account/DNS access required) and submit https://seosonas.co.uk/sitemap.xml. This has not been done by the code changes.
+2. Inspect the home page and each collection in Search Console. Confirm production is publicly accessible, uses the preferred domain, and has no unexpected noindex response headers. Test the structured data in Google's Rich Results Test.
+3. Add a link back to https://seosonas.co.uk/ from the Etsy shop profile and Facebook website field where supported. This work adds links *on this website*; it does not edit those external accounts.
+4. Add clear photos and factual details for each creation: dimensions, materials, how it is made, care, lead times, and what customers receive. Much of the catalogue still lacks product-specific photos/details; accurate, useful content is the next priority. Larger source photos would also benefit from a future automated responsive-image build pipeline.
+5. Review Search Console impressions, queries and indexing after recrawling. Rankings and rich results are not guaranteed by metadata or outbound social links.
+
+Sources: [Google image guidance](https://developers.google.com/search/docs/appearance/google-images), [Organization markup and profile links](https://developers.google.com/search/docs/appearance/structured-data/organization), [ecommerce URL guidance](https://developers.google.com/search/docs/specialty/ecommerce/designing-a-url-structure-for-ecommerce-sites).

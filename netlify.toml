@@ -4,3 +4,29 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# Supporting files should remain fetchable, but are not search landing pages.
+[[headers]]
+  for = "/snippets/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/scripts/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/tests/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/README.md"
+  [headers.values]
+    X-Robots-Tag = "noindex"
