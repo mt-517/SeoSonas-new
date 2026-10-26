@@ -65,3 +65,60 @@ test('generated sitemap contains canonical content and images; preview builds re
     await rm(dir,{recursive:true,force:true});
   }
 });
+
+test('page-owned order header and navigation survive repeated builds', async () => {
+  const dir = await mkdtemp(path.join(tmpdir(), 'seosonas-order-layout-'));
+  try {
+    await mkdir(path.join(dir, 'data'));
+    await mkdir(path.join(dir, 'snippets'));
+    await writeFile(path.join(dir, 'data/site.json'), JSON.stringify(config));
+    await writeFile(path.join(dir, 'snippets/header-footer.html'), '<header>Shared title</header><nav class="main-nav">Shared navigation</nav><footer>Footer</footer>');
+    for (const file of Object.keys(pages)) await writeFile(path.join(dir, file), '<html><head></head><body><main></main></body></html>');
+    const header = '<header class="home-header" data-page-header><p>Place Your Order</p></header>';
+    const nav = '<nav data-page-navigation class="main-nav">Custom links</nav>';
+    await writeFile(path.join(dir, 'order.html'), `<html><head></head><body><!-- shared:header:start -->${header}<!-- shared:header:end --><main class="compact-order"><!-- main-nav:start -->${nav}<!-- main-nav:end --></main></body></html>`);
+    await buildSEO(dir, {});
+    const first = await readFile(path.join(dir, 'order.html'), 'utf8');
+    await buildSEO(dir, {});
+    const second = await readFile(path.join(dir, 'order.html'), 'utf8');
+    assert.equal(first, second);
+    assert.ok(second.includes(header));
+    assert.ok(second.includes(nav));
+    assert.ok(!second.includes('Shared title'));
+    assert.ok(!second.includes('Shared navigation'));
+    const normal = await readFile(path.join(dir, 'faeries.html'), 'utf8');
+    assert.ok(normal.includes('Shared title'));
+    assert.ok(normal.includes('Shared navigation'));
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
+test('edited collection pages preserve their actual headers and navigation across builds', async () => {
+  const dir = await mkdtemp(path.join(tmpdir(), 'seosonas-collection-layout-'));
+  const collections = ['faeries', 'wish-witches', 'kitchen-witches', 'fictional-magical-characters'];
+  const originals = new Map();
+  try {
+    await mkdir(path.join(dir, 'data'));
+    await mkdir(path.join(dir, 'snippets'));
+    await writeFile(path.join(dir, 'data/site.json'), JSON.stringify(config));
+    await writeFile(path.join(dir, 'snippets/header-footer.html'), '<header>Shared replacement</header><nav class="main-nav">Shared links</nav><footer>Footer</footer>');
+    for (const file of Object.keys(pages)) {
+      const source = await readFile(new URL(`../${file}`, import.meta.url), 'utf8');
+      await writeFile(path.join(dir, file), source);
+      if (collections.includes(file.replace('.html', ''))) originals.set(file, source);
+    }
+    await buildSEO(dir, {});
+    await buildSEO(dir, {});
+    for (const [file, original] of originals) {
+      const built = await readFile(path.join(dir, file), 'utf8');
+      const header = original.match(/<header\b[^>]*>[\s\S]*?<\/header>/)[0];
+      const nav = original.match(/<!-- main-nav:start -->[\s\S]*?<!-- main-nav:end -->/)[0];
+      assert.ok(built.includes(header), `${file} keeps its header`);
+      assert.ok(built.includes(nav), `${file} keeps its navigation`);
+      assert.equal((built.match(/<header\b/g) || []).length, 1);
+    }
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});

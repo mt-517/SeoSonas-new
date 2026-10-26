@@ -66,13 +66,16 @@ export async function buildSEO(root, manifest) {
     html = html.replace('</head>',metadata(file,config,origin,preview)+'\n</head>');
     for (const [name,markup] of [['header',header],['footer',footer]]) {
       if (file === 'index.html' && html.includes('class="home-page"')) continue;
+      // Pages can own their masthead instead of inheriting the shared snippet.
+      if (name === 'header' && /<header\b[^>]*\bdata-page-header\b/.test(html)) continue;
       const block = `<!-- shared:${name}:start -->\n${markup}\n<!-- shared:${name}:end -->`;
       const pattern = new RegExp(`<!-- shared:${name}:start -->[\\s\\S]*?<!-- shared:${name}:end -->`);
       html = pattern.test(html) ? html.replace(pattern,()=>block) : name === 'header' ? html.replace(/<body>/,`<body>\n${block}`) : html.replace('</body>',`${block}\n</body>`);
     }
     html = html.replace(/<!-- breadcrumbs:start -->[\s\S]*?<!-- breadcrumbs:end -->\n?/g,'');
-    html = html.replace(/<!-- main-nav:start -->[\s\S]*?<!-- main-nav:end -->\n?/g, '');
-    if (file !== 'index.html' && navigation) {
+    const pageNavigation = /<nav\b[^>]*\bdata-page-navigation\b/.test(html);
+    if (!pageNavigation) html = html.replace(/<!-- main-nav:start -->[\s\S]*?<!-- main-nav:end -->\n?/g, '');
+    if (file !== 'index.html' && navigation && !pageNavigation) {
       const activeNavigation = navigation.replace(`href="${file}"`, `aria-current="page" href="${file}"`);
       html = html.replace(/<main\b[^>]*>\s*/, match => `${match.trimEnd()}\n<!-- main-nav:start -->${activeNavigation}<!-- main-nav:end -->\n`);
     }
