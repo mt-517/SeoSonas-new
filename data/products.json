@@ -511,7 +511,7 @@
   },
   {
     "id": "wizarding-folk",
-    "name": "Wizarding Folk – Harry Potter",
+    "name": "Wizarding Folk ",
     "category": "fictional-magical-characters",
     "page": "fictional-magical-characters.html",
     "orderTab": "fictional-characters",
@@ -553,7 +553,7 @@
   },
   {
     "id": "middle-earth",
-    "name": "Middle Earth – Lord of the Rings",
+    "name": "Middle Earth",
     "category": "fictional-magical-characters",
     "page": "fictional-magical-characters.html",
     "orderTab": "fictional-characters",
@@ -583,7 +583,7 @@
   },
   {
     "id": "christmas-family",
-    "name": "Christmas Family – A Magical Holiday",
+    "name": "Christmas Family ",
     "category": "fictional-magical-characters",
     "page": "fictional-magical-characters.html",
     "orderTab": "fictional-characters",
@@ -617,7 +617,7 @@
   },
   {
     "id": "addams-family",
-    "name": "The Addams Family – Delightfully Dark",
+    "name": "Delightfully Dark",
     "category": "fictional-magical-characters",
     "page": "fictional-magical-characters.html",
     "orderTab": "fictional-characters",
@@ -635,7 +635,7 @@
   },
   {
     "id": "wicked",
-    "name": "Wicked – The Untold Story",
+    "name": "The Untold Story",
     "category": "fictional-magical-characters",
     "page": "fictional-magical-characters.html",
     "orderTab": "fictional-characters",
