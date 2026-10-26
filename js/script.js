@@ -62,3 +62,17 @@ function setupOrderTabs() {
   }
 }
 document.addEventListener('DOMContentLoaded', setupOrderTabs);
+
+function setupCompactHomeHeader() {
+  const header = document.querySelector('.home-header');
+  if (!header) return;
+  // Separate thresholds keep the header from flickering as its height changes.
+  const syncHeader = () => {
+    if (window.scrollY > 160) header.classList.add('is-compact');
+    else if (window.scrollY < 10) header.classList.remove('is-compact');
+  };
+  window.addEventListener('scroll', syncHeader, { passive: true });
+  window.addEventListener('pageshow', syncHeader);
+  syncHeader();
+}
+document.addEventListener('DOMContentLoaded', setupCompactHomeHeader);

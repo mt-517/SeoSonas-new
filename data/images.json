@@ -9,6 +9,11 @@
       "images/faeries/autumn-fae/19-.jpg",
       "images/faeries/autumn-fae/20-.jpg",
       "images/faeries/autumn-fae/21-.jpg",
+      "images/faeries/autumn-fae/20260714_150433.jpg",
+      "images/faeries/autumn-fae/20260714_150437.jpg",
+      "images/faeries/autumn-fae/20260714_150445.jpg",
+      "images/faeries/autumn-fae/20260826_114527.jpg",
+      "images/faeries/autumn-fae/20260826_114818.jpg",
       "images/faeries/autumn-fae/img1.jpg"
     ]
   },
@@ -16,10 +21,19 @@
     "name": "Gaia – Earth Faery",
     "href": "faeries.html#earth-faery",
     "images": [
-      "images/faeries/earth-faery/71-.jpg",
-      "images/faeries/earth-faery/72-.jpg",
-      "images/faeries/earth-faery/73-.jpg",
-      "images/faeries/earth-faery/74-.jpg"
+      "images/faeries/gaia-earth-faery/71-.jpg",
+      "images/faeries/gaia-earth-faery/73-.jpg",
+      "images/faeries/gaia-earth-faery/20240706_070032.jpg",
+      "images/faeries/gaia-earth-faery/20240715_083227.jpg",
+      "images/faeries/gaia-earth-faery/20240715_083608.jpg",
+      "images/faeries/gaia-earth-faery/20240715_083928.jpg",
+      "images/faeries/gaia-earth-faery/20250201_124906.jpg",
+      "images/faeries/gaia-earth-faery/20250622_214228.jpg",
+      "images/faeries/gaia-earth-faery/20250622_215656.jpg",
+      "images/faeries/gaia-earth-faery/20250622_221156.jpg",
+      "images/faeries/gaia-earth-faery/20260408_222005.jpg",
+      "images/faeries/gaia-earth-faery/20260521_105940.jpg",
+      "images/faeries/gaia-earth-faery/20260521_110235.jpg"
     ]
   },
   "faeries/halloween-fae": {
@@ -34,7 +48,12 @@
       "images/faeries/halloween-fae/133-.jpg",
       "images/faeries/halloween-fae/134-.jpg",
       "images/faeries/halloween-fae/139-.jpg",
-      "images/faeries/halloween-fae/140-.jpg"
+      "images/faeries/halloween-fae/140-.jpg",
+      "images/faeries/halloween-fae/20260902_124621.jpg",
+      "images/faeries/halloween-fae/20260902_124628.jpg",
+      "images/faeries/halloween-fae/20260902_124701.jpg",
+      "images/faeries/halloween-fae/20260902_125922.jpg",
+      "images/faeries/halloween-fae/20260902_130023.jpg"
     ]
   },
   "faeries/jack-frost": {
@@ -52,10 +71,13 @@
     "name": "Lochie – Winter Fae",
     "href": "faeries.html#lochie-winter",
     "images": [
-      "images/faeries/lochie-winter/75-.jpg",
-      "images/faeries/lochie-winter/76-.jpg",
-      "images/faeries/lochie-winter/77-.jpg",
-      "images/faeries/lochie-winter/78-.jpg"
+      "images/faeries/lochie-water/75-.jpg",
+      "images/faeries/lochie-water/76-.jpg",
+      "images/faeries/lochie-water/77-.jpg",
+      "images/faeries/lochie-water/78-.jpg",
+      "images/faeries/lochie-water/20260323_105247.jpg",
+      "images/faeries/lochie-water/20260323_105307.jpg",
+      "images/faeries/lochie-water/20260807_122417.jpg"
     ]
   },
   "faeries/marina-water": {
@@ -76,7 +98,15 @@
       "images/faeries/pan/22-.jpg",
       "images/faeries/pan/23-.jpg",
       "images/faeries/pan/24-.jpg",
-      "images/faeries/pan/25-.jpg"
+      "images/faeries/pan/25-.jpg",
+      "images/faeries/pan/20260311_204841.jpg",
+      "images/faeries/pan/20260311_204855.jpg",
+      "images/faeries/pan/20260311_204915.jpg",
+      "images/faeries/pan/20260904_163533.jpg",
+      "images/faeries/pan/20260905_093657(1).jpg",
+      "images/faeries/pan/20260918_234021.jpg",
+      "images/faeries/pan/20260918_234039.jpg",
+      "images/faeries/pan/20261019_131120.jpg"
     ]
   },
   "faeries/spring-fae": {
@@ -88,7 +118,8 @@
       "images/faeries/spring-fae/46-.jpg",
       "images/faeries/spring-fae/56-.jpg",
       "images/faeries/spring-fae/57-.jpg",
-      "images/faeries/spring-fae/58-.jpg"
+      "images/faeries/spring-fae/58-.jpg",
+      "images/faeries/spring-fae/20260311_093611.jpg"
     ]
   },
   "faeries/summer-fae": {
@@ -116,7 +147,9 @@
       "images/faeries/thorn-thistle/52-.jpg",
       "images/faeries/thorn-thistle/53-.jpg",
       "images/faeries/thorn-thistle/54-.jpg",
-      "images/faeries/thorn-thistle/55-.jpg"
+      "images/faeries/thorn-thistle/55-.jpg",
+      "images/faeries/thorn-thistle/20260815_085356.jpg",
+      "images/faeries/thorn-thistle/20260815_102232.jpg"
     ]
   },
   "faeries/willow-forest": {
@@ -129,7 +162,12 @@
       "images/faeries/willow-forest/67-.jpg",
       "images/faeries/willow-forest/68-.jpg",
       "images/faeries/willow-forest/69-.jpg",
-      "images/faeries/willow-forest/70-.jpg"
+      "images/faeries/willow-forest/70-.jpg",
+      "images/faeries/willow-forest/20260612_142246.jpg",
+      "images/faeries/willow-forest/20260612_142337.jpg",
+      "images/faeries/willow-forest/20260702_163025.jpg",
+      "images/faeries/willow-forest/20260702_163145.jpg",
+      "images/faeries/willow-forest/20260702_163249.jpg"
     ]
   },
   "faeries/winter-fae": {
@@ -150,7 +188,9 @@
       "images/faeries/woody-forest/3-.jpg",
       "images/faeries/woody-forest/4-.jpg",
       "images/faeries/woody-forest/5-.jpg",
-      "images/faeries/woody-forest/6-.jpg"
+      "images/faeries/woody-forest/6-.jpg",
+      "images/faeries/woody-forest/20251113_153533.jpg",
+      "images/faeries/woody-forest/20260612_142246.jpg"
     ]
   },
   "wish-witches/poppy-and-her-sisters": {

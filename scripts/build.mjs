@@ -1,6 +1,7 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { renderHomeProducts } from '../lib/catalogue.mjs';
 import { buildSEO } from './seo.mjs';
 import { packageSite } from './package-site.mjs';
 
@@ -43,6 +44,10 @@ export async function build() {
   const products = JSON.parse(await readFile(path.join(root, 'data/products.json'), 'utf8'));
   validateProducts(products);
   const folders = await scanImages(path.join(root, 'images'));
+  // Preserve existing product links when a photo folder has been renamed.
+  for (const [id, folder] of Object.entries({'earth-faery':'gaia-earth-faery', 'lochie-winter':'lochie-water'})) {
+    if (!folders[`faeries/${id}`]?.length) folders[`faeries/${id}`] = folders[`faeries/${folder}`] || [];
+  }
   const manifest = {};
   for (const p of products.filter(p => p.active)) manifest[`${p.category}/${p.id}`] = { name:p.name, href:`${p.page}#${p.id}`, images:folders[`${p.category}/${p.id}`] || [] };
   for (const category of categories) manifest[`${category}/collection`] = {name:category.replaceAll('-', ' '),href:`${category}.html`,images:folders[`${category}/collection`] || []};
@@ -58,6 +63,10 @@ export async function build() {
     if (!pattern.test(source)) throw new Error(`Missing catalogue markers in ${file}`);
     await writeFile(file, source.replace(pattern, (_, start, end) => `${start}\n${markup}\n${end}`));
   }
+  const homeFile = path.join(root, 'index.html');
+  const home = await readFile(homeFile, 'utf8');
+  const homeProducts = products.map(p => ({...p, images: manifest[`${p.category}/${p.id}`]?.images || []}));
+  await writeFile(homeFile, home.replace(/(<!-- home:products:start -->)[\s\S]*?(<!-- home:products:end -->)/, (_, start, end) => `${start}\n${renderHomeProducts(homeProducts)}\n${end}`));
   await buildSEO(root, manifest);
   await packageSite(new URL('../', import.meta.url));
   console.log(`Built ${products.filter(p=>p.active).length} products and ${Object.keys(manifest).length} image folders.`);

@@ -48,7 +48,7 @@ export function metadata(file, config, origin, preview = false) {
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 ${origin ? `<link rel="canonical" href="${esc(url)}">\n<meta property="og:url" content="${esc(url)}">\n<meta property="og:image" content="${esc(origin+'/'+p.image)}">\n<meta property="og:image:alt" content="${esc(config.description)}">` : ''}
-${file === 'index.html' ? '<link rel="preload" as="image" href="images/hero.jpeg" fetchpriority="high">' : ''}
+
 <script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@graph':graph}).replaceAll('<','\\u003c')}</script>
 <!-- seo:end -->`;
 }
@@ -64,6 +64,7 @@ export async function buildSEO(root, manifest) {
     html = html.replace(/<!-- seo:start -->[\s\S]*?<!-- seo:end -->\s*/g,'').replace(/<title>[\s\S]*?<\/title>\s*/g,'');
     html = html.replace('</head>',metadata(file,config,origin,preview)+'\n</head>');
     for (const [name,markup] of [['header',header],['footer',footer]]) {
+      if (file === 'index.html' && html.includes('class="home-page"')) continue;
       const block = `<!-- shared:${name}:start -->\n${markup}\n<!-- shared:${name}:end -->`;
       const pattern = new RegExp(`<!-- shared:${name}:start -->[\\s\\S]*?<!-- shared:${name}:end -->`);
       html = pattern.test(html) ? html.replace(pattern,()=>block) : name === 'header' ? html.replace(/<body>/,`<body>\n${block}`) : html.replace('</body>',`${block}\n</body>`);
