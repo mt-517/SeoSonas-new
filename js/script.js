@@ -1,3 +1,7 @@
+// Invitation and password-recovery emails can land on the home page.
+if (/(?:^#|&)(?:invite_token|recovery_token)=/.test(location.hash)) {
+  location.replace('/admin/' + location.hash);
+}
 function setupOrderTabs() {
   const buttons = [...document.querySelectorAll('.order-tab-button')];
   if (!buttons.length) return;
@@ -44,10 +48,12 @@ function setupOrderTabs() {
   sync();
   const productId = new URLSearchParams(location.search).get('product');
   if (productId) {
-    fetch('data/products.json').then(response => {
+    const embedded = document.getElementById('selected-product');
+    const products = embedded ? Promise.resolve([JSON.parse(embedded.textContent)]) : fetch('data/products.json').then(response => {
       if (!response.ok) throw new Error('Could not load product');
       return response.json();
-    }).then(products => {
+    });
+    products.then(products => {
       const product = products.find(p => p.active && p.id === productId);
       if (!product) return;
       const field = document.querySelector(`#${product.orderTab} textarea[name="description"]`);

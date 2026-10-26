@@ -104,7 +104,7 @@
 
 <section class="order-container">
       <h1 style="text-align: center; margin-bottom: 2rem; color: var(--accent-color);">Place Your Order</h1>
-      <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">Select a product category below to choose your order. Delivery is £4.65 across the board.</p>
+      <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">Select a product category below to choose your order. Delivery is <span data-delivery>£4.65</span> across the board.</p>
 
       <!-- Order Tabs -->
       <div class="order-tabs">
@@ -118,7 +118,7 @@
       <!-- 1. Faeries -->
       <div class="order-section" id="faeries">
         <h2>Faeries</h2>
-        <div class="radio-group">
+        <div class="radio-group"><!-- pricing:faeries:start -->
           <div class="radio-item">
             <input type="radio" id="faeries-1" name="faeries-option" value="1-faery" 
               data-link="https://lopay.app/01e43/467e3248-9aa8-46e3-9e7e-c95e08b12ffa">
@@ -135,7 +135,7 @@
               <div class="radio-item-price">£40.00 + £4.65 delivery = £44.65</div>
             </div>
           </div>
-        </div>
+        <!-- pricing:faeries:end --></div>
 
         <div class="order-form">
           <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Faery Order Details</h3>
@@ -154,6 +154,8 @@
               <textarea id="faeries-description" name="description" placeholder="Tell us about your faery order... (which faeries you'd like, any special requests, etc.)"></textarea>
             </div>
             <input type="hidden" name="payment-link" class="payment-link-field">
+            <input type="hidden" name="order-option">
+            <input type="hidden" name="order-total">
             <button type="submit" class="form-submit">Proceed to Payment</button>
           </form>
         </div>
@@ -162,7 +164,7 @@
       <!-- 2. Wish Witches -->
       <div class="order-section" id="wish-witches">
         <h2>Wish Witches</h2>
-        <div class="radio-group">
+        <div class="radio-group"><!-- pricing:wish-witches:start -->
           <div class="radio-item">
             <input type="radio" id="wish-1" name="wish-option" value="1-witch"
               data-link="https://lopay.app/01e43/860f5f67-b67b-44e2-bb77-a2caba8be4b4">
@@ -203,7 +205,7 @@
               <div class="radio-item-price">£28.00 + £4.65 delivery = £32.65</div>
             </div>
           </div>
-        </div>
+        <!-- pricing:wish-witches:end --></div>
 
         <div class="order-form">
           <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Wish Witch Order Details</h3>
@@ -222,6 +224,8 @@
               <textarea id="wish-description" name="description" placeholder="Tell us about your wish witch order... (which witches you'd like, their names, special wishes, etc.)"></textarea>
             </div>
             <input type="hidden" name="payment-link" class="payment-link-field">
+            <input type="hidden" name="order-option">
+            <input type="hidden" name="order-total">
             <button type="submit" class="form-submit">Proceed to Payment</button>
           </form>
         </div>
@@ -230,7 +234,7 @@
       <!-- 3. Kitchen Witches -->
       <div class="order-section" id="kitchen-witches">
         <h2>Kitchen Witches</h2>
-        <div class="radio-group">
+        <div class="radio-group"><!-- pricing:kitchen-witches:start -->
           <div class="radio-item">
             <input type="radio" id="kitchen-1" name="kitchen-option" value="1-witch"
               data-link="https://lopay.app/01e43/864e230f-829a-4fc8-978d-674bcffe387c">
@@ -246,7 +250,7 @@
               <div class="radio-item-price">£38.00 + £4.65 delivery = £42.65 <em style="color: #999;">(Coming Soon)</em></div>
             </div>
           </div>
-        </div>
+        <!-- pricing:kitchen-witches:end --></div>
 
         <div class="order-form">
           <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Kitchen Witch Order Details</h3>
@@ -265,6 +269,8 @@
               <textarea id="kitchen-description" name="description" placeholder="Tell us about your kitchen witch order... (colors, quantities, any special requests, etc.)"></textarea>
             </div>
             <input type="hidden" name="payment-link" class="payment-link-field">
+            <input type="hidden" name="order-option">
+            <input type="hidden" name="order-total">
             <button type="submit" class="form-submit">Proceed to Payment</button>
           </form>
         </div>
@@ -273,7 +279,7 @@
       <!-- 4. Fictional Magical Characters -->
       <div class="order-section" id="fictional-characters">
         <h2>Fictional Magical Characters</h2>
-        <div class="radio-group">
+        <div class="radio-group"><!-- pricing:fictional-characters:start -->
           <div class="radio-item">
             <input type="radio" id="char-1" name="char-option" value="1-character"
               data-link="https://lopay.app/01e43/d3aab094-6344-47d3-8653-0989e981f2ad">
@@ -319,7 +325,7 @@
               <div class="radio-item-price">£39.00 + £4.65 delivery = £43.65 <em style="color: #999;">(Coming Soon)</em></div>
             </div>
           </div>
-        </div>
+        <!-- pricing:fictional-characters:end --></div>
 
         <div class="order-form">
           <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Fictional Character Order Details</h3>
@@ -338,6 +344,8 @@
               <textarea id="char-description" name="description" placeholder="Tell us about your character order... (which characters you'd like, what universes, any special requests, etc.)"></textarea>
             </div>
             <input type="hidden" name="payment-link" class="payment-link-field">
+            <input type="hidden" name="order-option">
+            <input type="hidden" name="order-total">
             <button type="submit" class="form-submit">Proceed to Payment</button>
           </form>
         </div>
@@ -377,7 +385,7 @@
     <!-- Delivery Info -->
     <section style="margin-top: 3rem; background-color: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
       <h2 style="color: var(--accent-color); margin-bottom: 1rem;">Important Information</h2>
-      <p><strong>Delivery Cost:</strong> £4.65 (standard delivery across the board)</p>
+      <p><strong>Delivery Cost:</strong> <span data-delivery>£4.65</span> (standard delivery across the board)</p>
       <p style="margin-top: 1rem;"><strong>How It Works:</strong> Select your desired product option above, fill in your details, and click "Proceed to Payment" to be taken to our secure payment page. You'll receive confirmation of your order via email.</p>
     </section>
   </main>
@@ -385,93 +393,7 @@
   <script src="js/script.js"></script>
   <script src="js/galleries.js"></script>
   <script src="js/header-footer-injector.js"></script>
-  <script>
-    // Make entire .radio-item div clickable to select radio input
-    document.querySelectorAll('.radio-item').forEach(item => {
-      item.addEventListener('click', function(e) {
-        // Prevent event propagation if clicking the actual radio input
-        if (e.target.type === 'radio') return;
-        
-        const radio = this.querySelector('input[type="radio"]');
-        if (radio) {
-          radio.click();
-        }
-      });
-    });
-
-    // Handle radio button selection and payment link injection
-    document.querySelectorAll('input[type="radio"]').forEach(radio => {
-      radio.addEventListener('change', function() {
-        const form = this.closest('.order-section').querySelector('.order-checkout-form');
-        if (form) {
-          const paymentLinkField = form.querySelector('.payment-link-field');
-          paymentLinkField.value = this.dataset.link;
-        }
-      });
-    });
-
-    // Handle order form submission
-    document.querySelectorAll('.order-checkout-form').forEach(form => {
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const category = this.dataset.category;
-        const radioButton = this.closest('.order-section').querySelector('input[type="radio"]:checked');
-        
-        // Check if a radio option was selected (except for 'more' category)
-        if (category !== 'more' && !radioButton) {
-          alert('Please select an option before proceeding.');
-          return;
-        }
-        
-        const paymentLink = this.querySelector('.payment-link-field')?.value || '';
-        
-        // Get form data for logging/tracking if needed
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
-        
-        // Validate required fields
-        if (!data.name || !data.email) {
-          alert('Please fill in your name and email.');
-          return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(data.email)) {
-          alert('Please enter a valid email address.');
-          return;
-        }
-
-        try {
-          // Submit to Netlify before redirecting the customer to payment
-          const response = await fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formData).toString()
-          });
-          if (!response.ok) throw new Error(`Submission failed: ${response.status}`);
-        } catch (error) {
-          console.error('Netlify form submission failed:', error);
-          alert('There was a problem submitting your order. Please try again.');
-          return;
-        }
-
-        // For 'more' category, just confirm after successful submission
-        if (category === 'more') {
-          alert('Thank you for your interest! We will contact you soon.');
-          this.reset();
-          return;
-        }
-        
-        
-        // Redirect to payment link after Netlify submission succeeds
-        if (paymentLink) {
-          window.location.assign(paymentLink);
-        }
-      });
-    });
-  </script>
+  <script src="js/order.js"></script>
 <!-- shared:footer:start -->
 <footer>
       <div class="footer-container">

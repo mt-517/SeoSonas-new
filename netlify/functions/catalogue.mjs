@@ -1,0 +1,3 @@
+import { handlers } from '../../lib/netlify-runtime.mjs';
+export default request => handlers().page(request);
+export const config = {path:['/faeries','/faeries/','/wish-witches','/wish-witches/','/kitchen-witches','/kitchen-witches/','/fictional-magical-characters','/fictional-magical-characters/','/more','/more/','/order','/order/','/index','/index/','/','/index.html','/faeries.html','/wish-witches.html','/kitchen-witches.html','/fictional-magical-characters.html','/more.html','/order.html','/sitemap.xml','/data/products.json','/data/images.json','/api/catalogue','/api/preview'],method:['GET','HEAD']};

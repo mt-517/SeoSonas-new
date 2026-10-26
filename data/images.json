@@ -3,48 +3,102 @@
     "name": "Autumn Fae & Faery",
     "href": "faeries.html#autumn-fae",
     "images": [
+      "images/faeries/autumn-fae/16-.jpg",
+      "images/faeries/autumn-fae/17-.jpg",
+      "images/faeries/autumn-fae/18-.jpg",
+      "images/faeries/autumn-fae/19-.jpg",
+      "images/faeries/autumn-fae/20-.jpg",
+      "images/faeries/autumn-fae/21-.jpg",
       "images/faeries/autumn-fae/img1.jpg"
     ]
   },
   "faeries/earth-faery": {
     "name": "Gaia – Earth Faery",
     "href": "faeries.html#earth-faery",
-    "images": []
+    "images": [
+      "images/faeries/earth-faery/71-.jpg",
+      "images/faeries/earth-faery/72-.jpg",
+      "images/faeries/earth-faery/73-.jpg",
+      "images/faeries/earth-faery/74-.jpg"
+    ]
   },
   "faeries/halloween-fae": {
     "name": "Halloween Fae & Faery",
     "href": "faeries.html#halloween-fae",
-    "images": []
+    "images": [
+      "images/faeries/halloween-fae/128-.jpg",
+      "images/faeries/halloween-fae/129-.jpg",
+      "images/faeries/halloween-fae/130-.jpg",
+      "images/faeries/halloween-fae/131-.jpg",
+      "images/faeries/halloween-fae/132-.jpg",
+      "images/faeries/halloween-fae/133-.jpg",
+      "images/faeries/halloween-fae/134-.jpg",
+      "images/faeries/halloween-fae/139-.jpg",
+      "images/faeries/halloween-fae/140-.jpg"
+    ]
   },
   "faeries/jack-frost": {
     "name": "Jack Frost Fae",
     "href": "faeries.html#jack-frost",
-    "images": []
+    "images": [
+      "images/faeries/jack-frost/94-.jpg",
+      "images/faeries/jack-frost/95-.jpg",
+      "images/faeries/jack-frost/96-.jpg",
+      "images/faeries/jack-frost/97-.jpg",
+      "images/faeries/jack-frost/98-.jpg"
+    ]
   },
   "faeries/lochie-winter": {
     "name": "Lochie – Winter Fae",
     "href": "faeries.html#lochie-winter",
-    "images": []
+    "images": [
+      "images/faeries/lochie-winter/75-.jpg",
+      "images/faeries/lochie-winter/76-.jpg",
+      "images/faeries/lochie-winter/77-.jpg",
+      "images/faeries/lochie-winter/78-.jpg"
+    ]
   },
   "faeries/marina-water": {
     "name": "Marina – Water Faery",
     "href": "faeries.html#marina-water",
-    "images": []
+    "images": [
+      "images/faeries/marina-water/78-.jpg",
+      "images/faeries/marina-water/79-.jpg",
+      "images/faeries/marina-water/80-.jpg",
+      "images/faeries/marina-water/81-.jpg",
+      "images/faeries/marina-water/82-.jpg"
+    ]
   },
   "faeries/pan": {
     "name": "Pan",
     "href": "faeries.html#pan",
-    "images": []
+    "images": [
+      "images/faeries/pan/22-.jpg",
+      "images/faeries/pan/23-.jpg",
+      "images/faeries/pan/24-.jpg",
+      "images/faeries/pan/25-.jpg"
+    ]
   },
   "faeries/spring-fae": {
     "name": "Spring Fae & Faery",
     "href": "faeries.html#spring-fae",
-    "images": []
+    "images": [
+      "images/faeries/spring-fae/44-.jpg",
+      "images/faeries/spring-fae/45-.jpg",
+      "images/faeries/spring-fae/46-.jpg",
+      "images/faeries/spring-fae/56-.jpg",
+      "images/faeries/spring-fae/57-.jpg",
+      "images/faeries/spring-fae/58-.jpg"
+    ]
   },
   "faeries/summer-fae": {
     "name": "Summer Fae & Faery",
     "href": "faeries.html#summer-fae",
     "images": [
+      "images/faeries/summer-fae/7-.jpg",
+      "images/faeries/summer-fae/8-.jpg",
+      "images/faeries/summer-fae/9-.jpg",
+      "images/faeries/summer-fae/10-.jpg",
       "images/faeries/summer-fae/img1.jpg",
       "images/faeries/summer-fae/img2.jpeg",
       "images/faeries/summer-fae/img3.jpg"
@@ -53,22 +107,51 @@
   "faeries/thorn-thistle": {
     "name": "Thorn – Thistle Fae",
     "href": "faeries.html#thorn-thistle",
-    "images": []
+    "images": [
+      "images/faeries/thorn-thistle/39-.jpg",
+      "images/faeries/thorn-thistle/40-.jpg",
+      "images/faeries/thorn-thistle/41-.jpg",
+      "images/faeries/thorn-thistle/42-.jpg",
+      "images/faeries/thorn-thistle/43-.jpg",
+      "images/faeries/thorn-thistle/52-.jpg",
+      "images/faeries/thorn-thistle/53-.jpg",
+      "images/faeries/thorn-thistle/54-.jpg",
+      "images/faeries/thorn-thistle/55-.jpg"
+    ]
   },
   "faeries/willow-forest": {
     "name": "Willow – Forest Fae",
     "href": "faeries.html#willow-forest",
-    "images": []
+    "images": [
+      "images/faeries/willow-forest/64-.jpg",
+      "images/faeries/willow-forest/65-.jpg",
+      "images/faeries/willow-forest/66-.jpg",
+      "images/faeries/willow-forest/67-.jpg",
+      "images/faeries/willow-forest/68-.jpg",
+      "images/faeries/willow-forest/69-.jpg",
+      "images/faeries/willow-forest/70-.jpg"
+    ]
   },
   "faeries/winter-fae": {
     "name": "Winter Fae & Faery",
     "href": "faeries.html#winter-fae",
-    "images": []
+    "images": [
+      "images/faeries/winter-fae/89-.jpg",
+      "images/faeries/winter-fae/90-.jpg",
+      "images/faeries/winter-fae/91-.jpg"
+    ]
   },
   "faeries/woody-forest": {
     "name": "Woody – Forest Fae",
     "href": "faeries.html#woody-forest",
-    "images": []
+    "images": [
+      "images/faeries/woody-forest/1-.jpg",
+      "images/faeries/woody-forest/2-.jpg",
+      "images/faeries/woody-forest/3-.jpg",
+      "images/faeries/woody-forest/4-.jpg",
+      "images/faeries/woody-forest/5-.jpg",
+      "images/faeries/woody-forest/6-.jpg"
+    ]
   },
   "wish-witches/poppy-and-her-sisters": {
     "name": "Poppy and Her Sisters",
@@ -233,7 +316,10 @@
   "fictional-magical-characters/wizarding-folk": {
     "name": "Wizarding Folk – Harry Potter",
     "href": "fictional-magical-characters.html#wizarding-folk",
-    "images": []
+    "images": [
+      "images/fictional-magical-characters/wizarding-folk/121-.jpg",
+      "images/fictional-magical-characters/wizarding-folk/122-.jpg"
+    ]
   },
   "fictional-magical-characters/middle-earth": {
     "name": "Middle Earth – Lord of the Rings",

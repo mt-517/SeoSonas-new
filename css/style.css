@@ -388,7 +388,7 @@ section {
 }
 
 .intro-section p {
-  font-size: 1.1rem;
+  font-size: .9rem;
   line-height: 1.8;
 }
 
@@ -878,3 +878,5 @@ footer :focus-visible, header :focus-visible { outline-color: white; }
 .hero-text { padding: 1rem; }
 .hero-subtitle { max-width: 48rem; margin: 1rem auto; }
 .hero h1 { color: #fff7e8; }
+.preview-banner { padding: 1rem; background: #ffedb7; color: #3e3518; text-align: center; }
+span.radio-item-title, span.radio-item-price { display: block; }

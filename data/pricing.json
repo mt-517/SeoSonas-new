@@ -1,0 +1,119 @@
+{
+  "deliveryPence": 465,
+  "options": {
+    "faeries": [
+      {
+        "id": "faeries-1",
+        "label": "1 Faery",
+        "pricePence": 2050,
+        "paymentLink": "https://lopay.app/01e43/467e3248-9aa8-46e3-9e7e-c95e08b12ffa",
+        "enabled": true
+      },
+      {
+        "id": "faeries-2",
+        "label": "2 Faeries",
+        "pricePence": 4000,
+        "paymentLink": "https://lopay.app/01e43/9b7fc6e8-3711-42e0-8b6b-ca27f14b41eb",
+        "enabled": true
+      }
+    ],
+    "wish-witches": [
+      {
+        "id": "wish-1",
+        "label": "1 Wish Witch",
+        "pricePence": 500,
+        "paymentLink": "https://lopay.app/01e43/860f5f67-b67b-44e2-bb77-a2caba8be4b4",
+        "enabled": true
+      },
+      {
+        "id": "wish-2",
+        "label": "2 Wish Witches",
+        "pricePence": 900,
+        "paymentLink": "https://lopay.app/01e43/ee69b032-d385-4780-b642-665a4b221a24",
+        "enabled": true
+      },
+      {
+        "id": "wish-3",
+        "label": "3 Wish Witches",
+        "pricePence": 1300,
+        "paymentLink": "https://lopay.app/01e43/e9383104-aed0-41a4-a31e-b469d616a202",
+        "enabled": true
+      },
+      {
+        "id": "wish-4",
+        "label": "Set of 4 Wish Witches",
+        "pricePence": 1900,
+        "paymentLink": "https://lopay.app/01e43/e43e4a76-4d59-4393-b2e2-59de4e9850dd",
+        "enabled": true
+      },
+      {
+        "id": "wish-6",
+        "label": "Set of 6 Wish Witches",
+        "pricePence": 2800,
+        "paymentLink": "https://lopay.app/01e43/5a74b116-c29f-40da-bb2c-c0d2f1127e2a",
+        "enabled": true
+      }
+    ],
+    "kitchen-witches": [
+      {
+        "id": "kitchen-1",
+        "label": "1 Kitchen Witch",
+        "pricePence": 1995,
+        "paymentLink": "https://lopay.app/01e43/864e230f-829a-4fc8-978d-674bcffe387c",
+        "enabled": true
+      },
+      {
+        "id": "kitchen-2",
+        "label": "2 Kitchen Witches",
+        "pricePence": 3800,
+        "paymentLink": "",
+        "enabled": false
+      }
+    ],
+    "fictional-characters": [
+      {
+        "id": "char-1",
+        "label": "1 Fictional Magical Character",
+        "pricePence": 700,
+        "paymentLink": "https://lopay.app/01e43/d3aab094-6344-47d3-8653-0989e981f2ad",
+        "enabled": true
+      },
+      {
+        "id": "char-2",
+        "label": "2 Fictional Magical Characters",
+        "pricePence": 1300,
+        "paymentLink": "https://lopay.app/01e43/c5021c5e-838d-4b54-a7e4-a21df695e09b",
+        "enabled": true
+      },
+      {
+        "id": "char-3",
+        "label": "3 Fictional Magical Characters",
+        "pricePence": 1950,
+        "paymentLink": "https://lopay.app/01e43/84ff3697-1315-41e9-98fb-62ec4624b550",
+        "enabled": true
+      },
+      {
+        "id": "char-4",
+        "label": "4 Fictional Magical Characters",
+        "pricePence": 2600,
+        "paymentLink": "",
+        "enabled": false
+      },
+      {
+        "id": "char-5",
+        "label": "5 Fictional Magical Characters",
+        "pricePence": 3250,
+        "paymentLink": "",
+        "enabled": false
+      },
+      {
+        "id": "char-6",
+        "label": "6 Fictional Magical Characters",
+        "pricePence": 3900,
+        "paymentLink": "",
+        "enabled": false
+      }
+    ],
+    "more": []
+  }
+}

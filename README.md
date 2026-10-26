@@ -1,6 +1,8 @@
 # SeoSonas catalogue
 
-The site stays a simple static site, with no basket. All 54 existing products are now managed in `data/products.json`. Their pages and navigation are generated from that file; galleries share an automatically generated image index. Existing Netlify Forms and Lopay payment links remain in place.
+The site now includes a live Owner’s Studio at `/admin/`, powered by Netlify Identity, Functions and Blobs. See **[ADMIN_SETUP.md](ADMIN_SETUP.md)** for activation and daily editing. The existing Netlify Forms + Lopay flow remains, with no basket.
+
+The files in `data/` seed the initial catalogue. Once the studio saves content, Blobs becomes the source of truth; repository edits do not overwrite live content. The folder workflow below is useful for initial setup and static previews.
 
 ## Everyday editing
 
@@ -46,39 +48,19 @@ Supported categories: `faeries`, `wish-witches`, `kitchen-witches`, `fictional-m
 
 Do not edit content between `catalogue:…:start` and `catalogue:…:end` comments in HTML: the build replaces it. Editorial introduction and home-page copy remain in HTML. Adding a completely new category requires a page, order form and navigation update.
 
-Prices and payment options still live in `order.html`. A price change must also be reflected in the corresponding Lopay payment link; changing a displayed price alone does not change what Lopay charges.
+Initial prices and payment options live in `data/pricing.json`; after activation they are managed in the studio. A price change must also be reflected in the corresponding Lopay payment link; changing a displayed price alone does not change what Lopay charges.
 
 ## Netlify deployment
 
-`netlify.toml` sets `npm run build` and publishes the site root. No npm dependencies are needed. Node 22 or later is required. For manual drag-and-drop deployment, run the build locally first. Enable Netlify Forms detection in the site's settings and verify a test submission on a deployed preview before going live. The local preview cannot receive Netlify Forms submissions or verify payment processing.
+`netlify.toml` sets `npm run build`, publishes `dist`, and packages `netlify/functions`. Node 22.12 or later and the locked npm dependencies are required. The backend serves the live catalogue as crawlable HTML; static HTML remains in the deployment for Netlify Forms detection. Use a normal Netlify build/deploy with Functions, not a static-only drag-and-drop upload. See [ADMIN_SETUP.md](ADMIN_SETUP.md) for invite-only Identity setup and the deployment smoke test.
 
-## Recommended next step: an owner admin page without redeploying
+## Live editing
 
-For this small catalogue, use **JSON in Netlify Blobs, accessed through Netlify Functions, with a protected owner admin page**. JSON is the data format; Blobs is where the live data is stored. These are complementary choices. A relational database is unnecessary unless stock tracking, transactional orders, or complex reporting is added later.
-
-Suggested implementation:
-
-- Store a published catalogue JSON document and image objects in a site-wide Blobs store. Preserve these product IDs and image folder prefixes.
-- Add a public read-only catalogue Function, and render product sections and navigation from its response at runtime. The current build-generated product HTML must be replaced or refreshed from the live catalogue to support publication without redeploying. Merely putting a JSON file into Blobs will not do that by itself.
-- Build `/admin` with product forms, active/hidden toggles, image upload/reorder/remove, a preview, and an explicit Publish action. Store uploaded images with stable IDs and separate display order; serve them through an image Function.
-- Use invite-only Netlify Identity, with an owner/admin role. Verify authentication AND role on every write/upload Function; hiding the admin link is not access control. Keep credentials server-side.
-- Keep drafts separate from the published catalogue. Publish an entire validated catalogue snapshot, with a revision check so two browser tabs cannot overwrite each other's edits. Retain previous snapshots for rollback and export backups.
-- Use strong consistency for immediate visibility after publishing, and configure HTTP caching so the browser does not keep a stale catalogue. Namespace preview and production stores separately: site-wide Blobs stores otherwise share data between deploy contexts.
-- Move category pricing, quantity options, delivery cost, and Lopay link mappings into the same managed data model. Validate totals and require matching payment-link updates before publishing prices. Preserve static Netlify form declarations, because Netlify discovers forms at deploy time.
-
-That requires one initial deployment to install the admin and Functions. Product/photo/price edits after that can publish without another deployment. Code changes still need deployment. The live admin/backend is a recommended next phase, not included in this change.
-
-Alternative: Decap CMS provides a Git-backed editor and version history, but saving commits files and normally triggers a deployment. Choose it if “no manual deployment” is sufficient; choose Blobs if “no deployment at all for content edits” is essential.
-
-Official references (checked September 2026):
-- [Netlify Blobs: site-wide storage and consistency](https://docs.netlify.com/build/data-and-storage/netlify-blobs/)
-- [Netlify Identity](https://docs.netlify.com/manage/security/secure-access-to-sites/identity/overview/)
-- [Identity remains supported: February 2026 update](https://www.netlify.com/blog/auth0-extension-identity-changes/)
-- [Serving uploaded images from Blobs](https://developers.netlify.com/guides/user-generated-uploads-with-netlify-blobs/)
+Use the studio to add/edit/hide/remove products, upload/reorder photos, change collection photos and prices, preview private drafts, publish, export/import backups and restore previous published versions. Publication uses atomic version checks and does not require a deployment. Existing categories and order forms are retained. Administrative access requires an invited Identity account with the `admin` role; a sign-in alone is not sufficient.
 
 ## Verification
 
-`npm test` checks natural filename sorting, folder discovery, unsupported files, empty folders, catalogue validation, every product's order destination and gallery link, and repeatable builds. Live Netlify Forms and Lopay need deployment-level verification.
+`npm test` covers folder discovery, catalogue validation, generated SEO, draft isolation, admin authorization, CSRF, version conflicts, publication/rollback, price validation, stale checkout rejection, upload signatures and private media. `npm run demo:admin` runs a disposable local studio with no access to live data. Hosted Identity, Blobs, Netlify Forms and Lopay need deployment-level verification.
 
 
 ## Search visibility

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><meta name="referrer" content="same-origin">
+<title>Owner’s Studio | SeoSonas</title><link rel="stylesheet" href="/admin/admin.css">
+<script src="/admin/admin.js" defer></script>
+</head>
+<body>
+<header><div><a href="/">SeoSonas</a><span>Owner’s Studio</span></div><button id="logout" hidden>Sign out</button></header>
+<main>
+<p id="status" role="status" aria-live="polite">Connecting to your studio…</p>
+<section id="login-panel" class="panel" hidden>
+<h1>Welcome back, Helen</h1><p>Sign in to care for your collection. Changes stay in your draft until you publish them.</p>
+<form id="login-form">
+<label>Email address<input id="email" type="email" autocomplete="username" required></label>
+<label id="password-label">Password<input id="password" type="password" autocomplete="current-password" minlength="8" required></label>
+<button type="submit" id="login-submit" class="primary">Sign in</button><button type="button" id="recover">Forgot your password?</button>
+</form>
+<p class="hint">Access is by invitation only. Your account must have the admin role.</p>
+</section>
+<section id="studio" hidden>
+<div class="studio-heading"><div><p class="eyebrow">YOUR HANDMADE COLLECTION</p><h1>A little room for making magic</h1><p id="environment"></p></div><a href="/" target="_blank" rel="noopener">Visit your shop ↗</a></div>
+<div class="toolbar panel"><span id="save-state">Draft loaded</span><button id="save" class="primary">Save draft</button><button id="reload">Reload saved draft</button><button id="preview">Preview saved draft ↗</button><button id="publish" class="publish">Publish saved draft</button></div>
+<div class="studio-grid">
+<aside class="panel"><h2>Your collection</h2><label>Find a creation<input type="search" id="search" placeholder="Name or category"></label><button id="add-product">+ New product</button><div id="product-list"></div><hr><button id="edit-collections">Collection photographs</button><button id="edit-pricing">Prices & payment links</button><button id="edit-backups">Backups & history</button></aside>
+<section class="panel" id="product-panel">
+<h2 id="editor-title">Choose a creation</h2>
+<form id="product-form" hidden>
+<div class="fields"><label>Name<input name="name" maxlength="150" required></label><label>Product ID<input name="id" pattern="[a-z0-9]+(-[a-z0-9]+)*" maxlength="100" required><small>Keep this stable once published, so existing links keep working.</small></label><label>Collection<select name="category"><option value="faeries">Faeries</option><option value="wish-witches">Wish Witches</option><option value="kitchen-witches">Kitchen Witches</option><option value="fictional-magical-characters">Magical Characters</option><option value="more">More Creations</option></select></label><label class="checkbox"><input type="checkbox" name="active">Visible in the shop</label></div>
+<label>Description<textarea name="description" rows="8" placeholder="Write a paragraph about this creation. Separate paragraphs with a blank line. Start a list item with - "></textarea></label>
+<p class="hint">Share its materials, dimensions and character. Use blank lines between paragraphs, or start a line with “- ” for a list item.</p>
+<div class="actions"><button type="button" id="product-up">Move earlier</button><button type="button" id="product-down">Move later</button><button type="button" id="remove-product" class="danger">Remove from draft</button></div>
+</form>
+<div id="photos-panel" hidden><h3>Photographs</h3><p class="hint">The first photograph leads the gallery. Uploads are private until included in a published product or collection.</p><label class="upload">Add photographs<input id="upload" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple></label><p class="hint">JPEG, PNG, WebP or GIF, up to 4 MB each. Use descriptive names; multiple uploads are added in filename order.</p><div id="photos" class="photos"></div></div>
+<div id="collections-panel" hidden><label>Collection<select id="collection-select"><option value="faeries">Faeries</option><option value="wish-witches">Wish Witches</option><option value="kitchen-witches">Kitchen Witches</option><option value="fictional-magical-characters">Magical Characters</option><option value="more">More Creations</option></select></label><p>These photographs appear on the home page and in collection introductions.</p></div>
+<div id="pricing-panel" hidden><p>These are the existing category and quantity options. Each enabled option needs a Lopay link that charges its total, including delivery. Editing a price here does not change Lopay.</p><label>Delivery (£)<input id="delivery" type="number" min="0" max="10000" step="0.01"></label><div id="prices"></div><label class="checkbox"><input id="prices-reviewed" type="checkbox">I have checked every enabled Lopay link against the displayed total, including delivery.</label></div>
+<div id="backups-panel" hidden><p>Download a copy before making major changes. History contains up to 30 previous published versions. Restoring one only changes the draft; review it before publishing.</p><button id="export">Download draft backup</button><label>Import catalogue backup<input id="import" type="file" accept="application/json,.json"></label><div id="history"></div></div>
+</section>
+</div>
+</section>
+</main>
+</body>
+</html>
