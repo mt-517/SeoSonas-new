@@ -1,16 +1,19 @@
 // Reuse a folder anywhere: data-gallery="faeries/autumn-fae" data-count="0".
 // 0 means all; positive integers select the first N naturally sorted filenames.
-async function setupGalleries() {
-  const containers = document.querySelectorAll('[data-gallery]:not([data-gallery-rendered])');
+async function setupGalleries(root = document, suppliedFolders = null) {
+  const containers = root.querySelectorAll('[data-gallery]:not([data-gallery-rendered])');
   document.querySelectorAll('.product-pictures').forEach(details => {
     const gallery = details.querySelector('[data-gallery-rendered]');
     if (gallery) details.hidden = gallery.querySelectorAll('img').length < 2;
   });
   if (!containers.length) return;
   try {
-    const response = await fetch('data/images.json');
-    if (!response.ok) throw new Error('Could not load photographs');
-    const folders = await response.json();
+    let folders = suppliedFolders;
+    if (!folders) {
+      const response = await fetch('data/images.json');
+      if (!response.ok) throw new Error('Could not load photographs');
+      folders = await response.json();
+    }
     containers.forEach(container => {
       const folder = folders[container.dataset.gallery];
       const count = Number(container.dataset.count ?? 0);
@@ -49,4 +52,4 @@ async function setupGalleries() {
     });
   }
 }
-document.addEventListener('DOMContentLoaded', setupGalleries);
+document.addEventListener('DOMContentLoaded', () => setupGalleries());

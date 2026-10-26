@@ -65,8 +65,7 @@ export async function build() {
   }
   const homeFile = path.join(root, 'index.html');
   const home = await readFile(homeFile, 'utf8');
-  const homeProducts = products.map(p => ({...p, images: manifest[`${p.category}/${p.id}`]?.images || []}));
-  await writeFile(homeFile, home.replace(/(<!-- home:products:start -->)[\s\S]*?(<!-- home:products:end -->)/, (_, start, end) => `${start}\n${renderHomeProducts(homeProducts)}\n${end}`));
+  await writeFile(homeFile, home.replace(/(<!-- home:products:start -->)[\s\S]*?(<!-- home:products:end -->)/, (_, start, end) => `${start}\n${renderHomeProducts(products)}\n${end}`));
   await buildSEO(root, manifest);
   await packageSite(new URL('../', import.meta.url));
   console.log(`Built ${products.filter(p=>p.active).length} products and ${Object.keys(manifest).length} image folders.`);

@@ -191,206 +191,8 @@
     "active": true
   },
   {
-    "id": "whisp-witch",
-    "name": "Whisp Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "ginny-witch",
-    "name": "Ginny Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "ruby-witch",
-    "name": "Ruby Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "yolanda-witch",
-    "name": "Yolanda Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "gertie-witch",
-    "name": "Gertie Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "hattie-witch",
-    "name": "Hattie Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "oona-witch",
-    "name": "Oona Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "crystal-witch",
-    "name": "Crystal Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "rowena-witch",
-    "name": "Rowena Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "wanda-witch",
-    "name": "Wanda Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "lily-witch",
-    "name": "Lily Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "wendy-witch",
-    "name": "Wendy Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "wren-witch",
-    "name": "Wren Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "betina-witch",
-    "name": "Betina Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "gretel-witch",
-    "name": "Gretel Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "wisdom-witch",
-    "name": "Wisdom Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "arwyn-witch",
-    "name": "Arwyn Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "paige-witch",
-    "name": "Paige Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "winnie-witch",
-    "name": "Winnie Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "willow-witch",
-    "name": "Willow Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "rose-witch",
-    "name": "Rose Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "elsa-witch",
-    "name": "Elsa Witch",
-    "category": "wish-witches",
-    "page": "wish-witches.html",
-    "orderTab": "wish-witches",
-    "blocks": [],
-    "active": true
-  },
-  {
-    "id": "yenefer-witch",
-    "name": "Yenefer Witch",
+    "id": "wish-witches",
+    "name": "Wish Witches",
     "category": "wish-witches",
     "page": "wish-witches.html",
     "orderTab": "wish-witches",
@@ -406,7 +208,7 @@
     "blocks": [
       {
         "type": "p",
-        "text": "✨ Protection & Mystery"
+        "text": "Protection & Mystery"
       }
     ],
     "active": true
@@ -420,7 +222,7 @@
     "blocks": [
       {
         "type": "p",
-        "text": "💙 Calm & Clarity"
+        "text": "Calm & Clarity"
       }
     ],
     "active": true
@@ -434,7 +236,7 @@
     "blocks": [
       {
         "type": "p",
-        "text": "🌍 Grounding & Stability"
+        "text": "Grounding & Stability"
       }
     ],
     "active": true
@@ -448,7 +250,7 @@
     "blocks": [
       {
         "type": "p",
-        "text": "🌿 Healing & Growth"
+        "text": "Healing & Growth"
       }
     ],
     "active": true
@@ -462,7 +264,7 @@
     "blocks": [
       {
         "type": "p",
-        "text": "☀️ Joy & Creativity"
+        "text": "Joy & Creativity"
       }
     ],
     "active": true
@@ -476,7 +278,7 @@
     "blocks": [
       {
         "type": "p",
-        "text": "💖 Love & Kindness"
+        "text": "Love & Kindness"
       }
     ],
     "active": true
@@ -490,7 +292,7 @@
     "blocks": [
       {
         "type": "p",
-        "text": "🔥 Passion & Energy"
+        "text": "Passion & Energy"
       }
     ],
     "active": true
@@ -504,7 +306,7 @@
     "blocks": [
       {
         "type": "p",
-        "text": "✨ Positivity & Light"
+        "text": "Positivity & Light"
       }
     ],
     "active": true
@@ -653,7 +455,7 @@
   },
   {
     "id": "hocus-pocus",
-    "name": "Hocus Pocus – Three Witches of Magic",
+    "name": "Three Witches of Magic",
     "category": "fictional-magical-characters",
     "page": "fictional-magical-characters.html",
     "orderTab": "fictional-characters",
@@ -671,7 +473,7 @@
   },
   {
     "id": "practical-magic",
-    "name": "Practical Magic – Love, Magic & Destiny",
+    "name": "Love, Magic & Destiny",
     "category": "fictional-magical-characters",
     "page": "fictional-magical-characters.html",
     "orderTab": "fictional-characters",

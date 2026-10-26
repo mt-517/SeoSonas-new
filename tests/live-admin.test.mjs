@@ -11,9 +11,10 @@ const pricing=JSON.parse(await readFile('data/pricing.json','utf8'));
 const seed={version:1,products:products.map(p=>({...p,images:images[`${p.category}/${p.id}`]?.images||[]})),collections:Object.fromEntries(['faeries','wish-witches','kitchen-witches','fictional-magical-characters','more'].map(c=>[c,images[`${c}/collection`].images])),pricing};
 const template=await readFile('faeries.html','utf8');
 const order=await readFile('order.html','utf8');
+const home=await readFile('index.html','utf8');
 function setup(user={id:'owner',roles:['admin'],email:'owner@example.invalid'}) {
   const repository=new CatalogueStore(new MemoryStore(),seed);
-  const handlers=createHandlers({repository,getUser:async()=>user,auth:{},templates:{'faeries.html':template,'order.html':order},site:{url:'https://seosonas.co.uk'},context:'production'});
+  const handlers=createHandlers({repository,getUser:async()=>user,auth:{},templates:{'index.html':home,'faeries.html':template,'order.html':order},site:{url:'https://seosonas.co.uk'},context:'production'});
   return {repository,handlers};
 }
 const req=(path,body,origin='https://shop.example')=>new Request('https://shop.example'+path,{method:body?'POST':'GET',headers:{Origin:origin,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});
@@ -98,4 +99,29 @@ test('seed revisions change if a deployment changes initial prices before the fi
   const first=setup().repository;const changed=structuredClone(seed);changed.pricing.deliveryPence=700;
   const second=new CatalogueStore(new MemoryStore(),changed);
   assert.notEqual((await first.read()).state.publishedRevision,(await second.read()).state.publishedRevision);
+});
+
+test('homepage HTML and browser catalogue reflect publication while previews retain drafts', async () => {
+  const {repository,handlers}=setup();
+  const draft=structuredClone(seed);
+  draft.products[0].name='Homepage published rename';
+  draft.products[0].images=[];
+  draft.products[1].active=false;
+  draft.products.push({...draft.products[0],id:'new-home-product',name:'New homepage creation'});
+  const saved=await repository.write('save',{etag:'initial',catalogue:draft},'owner');
+  const preview=await (await handlers.page(req('/api/preview?page=index.html'))).text();
+  assert.ok(preview.includes('New homepage creation'));
+  assert.ok(preview.includes('preview-banner'));
+  assert.ok(!(await (await handlers.page(req('/'))).text()).includes('Homepage published rename'));
+  await repository.write('publish',{etag:saved.etag},'owner');
+  const html=await (await handlers.page(req('/'))).text();
+  const api=await (await handlers.page(req('/api/catalogue'))).json();
+  assert.ok(html.includes('Homepage published rename'));
+  assert.ok(html.includes('New homepage creation'));
+  assert.ok(html.includes('Photographs coming soon'));
+  assert.ok(!html.includes(`data-gallery="${draft.products[1].category}/${draft.products[1].id}"`));
+  assert.equal((html.match(/class="home-card"/g)||[]).length,api.products.length);
+  assert.equal(api.products[0].name,'Homepage published rename');
+  assert.deepEqual(api.products[0].images,[]);
+  assert.ok(html.includes('js/home.js'));
 });

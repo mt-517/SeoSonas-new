@@ -987,3 +987,18 @@ span.radio-item-title, span.radio-item-price { display: block; }
 @media (prefers-reduced-motion: reduce) {
   .home-header, .home-header p { transition: none; }
 }
+
+.home-card-photo { min-height: 0; overflow: hidden; }
+.home-card-photo > a { display: block; height: 100%; }
+.home-card-photo .gallery-status {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 12px;
+  background: #e5eeeb;
+  font-size: 14px;
+  text-align: center;
+}
+.home-card-label { color: inherit; }
+.home-card:focus-within { outline: 3px solid #015767; outline-offset: 3px; }
