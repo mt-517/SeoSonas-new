@@ -56,15 +56,15 @@
     "active": true
   },
   {
-    "id": "lochie-winter",
-    "name": "Lochie – Winter Fae",
+    "id": "lochie-water",
+    "name": "Lochie – Water Fae",
     "category": "faeries",
     "page": "faeries.html",
     "orderTab": "faeries",
     "blocks": [
       {
         "type": "p",
-        "text": "Lochie, the Winter Fae, dwells in the deep cold and icy places. A guardian of winter's quiet magic, this fae brings peace in the stillness and beauty in the snow. Lochie reminds us that even in the coldest seasons, there is profound beauty and power to be found."
+        "text": "Lochie, the Water Fae"
       }
     ],
     "active": true
