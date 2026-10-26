@@ -7,6 +7,20 @@
   --dark-text: #102a2c;
   --border-color: #015767;
   --spacing-unit: .5rem;
+
+  /* Global text defaults (individual components can override these). */
+  --body-font-size: 1rem;
+  --body-line-height: 1.8;
+
+  /* Footer controls: text, line spacing, outer space and gaps. */
+  --footer-font-size: .8rem;
+  --footer-heading-size: 1rem;
+  --footer-line-height: 1.45;
+  --footer-padding: 1.25rem 1rem;
+  --footer-margin-top: 1.5rem;
+  --footer-column-gap: 1rem;
+  --footer-item-gap: .25rem;
+  --footer-section-gap: .75rem;
 }
 
 /* Reset and Base */
@@ -18,7 +32,8 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
+  font-size: var(--body-font-size);
+  line-height: var(--body-line-height);
   color: var(--dark-text);
   background-color: var(--light-bg);
 }
@@ -37,12 +52,12 @@ h6 {
 
 h1 {
   font-size: 3rem;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
 }
 
 h2 {
   font-size: 2.25rem;
-  margin-bottom: 1.25rem;
+  /* margin-bottom: 1.25rem; */
 }
 
 h3 {
@@ -235,7 +250,7 @@ section {
 }
 
 .section-text p {
-  margin-bottom: 1rem;
+  margin-bottom: .1rem;
 }
 
 .read-more-link {
@@ -381,15 +396,15 @@ section {
 /* Introduction Sections */
 .intro-section {
   background-color: white;
-  padding: 2rem;
+  padding: .5rem;
   border-radius: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .intro-section p {
   font-size: .9rem;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
 /* Faeries Sections */
@@ -414,14 +429,14 @@ section {
 }
 
 .faery-image {
-  width: 100%;
-  height: 300px;
+  width: 200px;
+  /* height: 300px; */
   background-color: var(--light-bg);
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1rem;
   overflow: hidden;
 }
 
@@ -432,7 +447,8 @@ section {
 }
 
 .faery-text p {
-  margin-bottom: 1rem;
+  margin-bottom: .1rem;
+  font-size: small;
 }
 
 /* Order Page */
@@ -581,8 +597,10 @@ section {
 footer {
   background-color: var(--secondary-color);
   color: white;
-  padding: 3rem 1rem;
-  margin-top: 3rem;
+  font-size: var(--footer-font-size);
+  line-height: var(--footer-line-height);
+  padding: var(--footer-padding);
+  margin-top: var(--footer-margin-top);
 }
 
 .footer-container {
@@ -594,22 +612,23 @@ footer {
 .footer-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
+  gap: var(--footer-column-gap);
+  margin-bottom: var(--footer-section-gap);
 }
 
 .footer-column h4 {
   color: var(--light-bg);
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+  margin-bottom: var(--footer-item-gap);
+  font-size: var(--footer-heading-size);
 }
 
 .footer-column ul {
   list-style: none;
 }
 
-.footer-column li {
-  margin-bottom: 0.75rem;
+.footer-column li,
+footer p {
+  margin-bottom: var(--footer-item-gap);
 }
 
 .footer-column a {
@@ -623,10 +642,10 @@ footer {
 
 .footer-bottom {
   text-align: center;
-  padding-top: 1.5rem;
+  padding-top: var(--footer-section-gap);
   border-top: 1px solid rgba(212, 175, 55, 0.3);
   color: #fff;
-  font-size: 0.9rem;
+  font-size: inherit;
 }
 
 /* Responsive */
@@ -694,7 +713,7 @@ footer {
 
   .footer-columns {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: var(--footer-column-gap);
   }
   
 
@@ -822,15 +841,15 @@ footer {
   --heading-font: 'Cormorant Garamond', 'Palatino Linotype', Palatino, Georgia, serif;
   --body-font: 'Lora', Georgia, serif;
 }
-body { font-family: var(--body-font); font-size: 1rem; line-height: 1.8; }
+body { font-family: var(--body-font); }
 h1, h2, h3, h4, h5, h6, .header-logo a, .product-name {
   font-family: var(--heading-font);
   line-height: 1.15;
   font-weight: 600;
   letter-spacing: -.015em;
 }
-h1 { font-size: clamp(2.7rem, 6vw, 4.5rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h1 { font-size: clamp(2.7rem, vw, 4.5rem); }
+h2 { /* font-size: clamp(2rem, 4vw, 3rem); */ }
 h3 { font-size: 1.9rem; }
 .header-logo a { font-size: 2.2rem; }
 button, input, textarea, select { font: inherit; }
@@ -841,8 +860,8 @@ section[id], article[id], .order-section { scroll-margin-top: 12rem; }
 footer :focus-visible, header :focus-visible { outline-color: white; }
 .order-button:hover { color: white; background: var(--primary-color); }
 .product-order { margin-top: 1rem; padding: .65rem 1.2rem; line-height: 1.5; }
-.catalogue-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin: 1.5rem 1rem 3rem; }
-.catalogue-nav a { padding: .4rem .9rem; border: 1px solid var(--border-color); border-radius: 2rem; font-size: .9rem; }
+.catalogue-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin: 1rem 1rem 1rem; }
+.catalogue-nav a { padding: 0rem .4rem; border: 1px solid var(--border-color); border-radius: 2rem; font-size: .8rem; }
 .catalogue-nav a:hover { background: var(--primary-color); color: white; }
 .product-gallery, .collection-gallery { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
 [data-gallery] a { display: block; overflow: hidden; border-radius: .5rem; }
@@ -1002,3 +1021,114 @@ span.radio-item-title, span.radio-item-price { display: block; }
 }
 .home-card-label { color: inherit; }
 .home-card:focus-within { outline: 3px solid #015767; outline-offset: 3px; }
+
+/* Compact collection pages: natural photo proportions and side-by-side details. */
+.compact-catalogue .faery-section {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.compact-catalogue .faery-section h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: .65rem;
+}
+.compact-catalogue .faery-content {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+.compact-catalogue .faery-content > .product-gallery {
+  margin-bottom: 0;
+  grid-template-columns: minmax(0, 1fr);
+}
+.compact-catalogue [data-gallery] img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 22rem;
+  aspect-ratio: auto;
+  margin-inline: auto;
+  background: transparent;
+}
+.compact-catalogue .faery-text,
+.compact-catalogue .product-info {
+  min-width: 0;
+  font-size: .875rem;
+  line-height: 1.55;
+}
+.compact-catalogue .faery-text p,
+.compact-catalogue .product-info p {
+  font-size: inherit;
+  margin-bottom: .5rem;
+}
+.compact-catalogue .product-order {
+  font-size: .825rem;
+  padding: .5rem .8rem;
+  margin-top: .4rem;
+}
+.compact-catalogue .product-pictures { margin-top: .5rem; }
+.compact-catalogue .product-pictures summary {
+  font-size: .825rem;
+  padding: .45rem 0;
+}
+.compact-catalogue .product-pictures[open] summary { margin-bottom: .5rem; }
+.compact-catalogue .product-gallery,
+.compact-catalogue .collection-gallery { gap: .65rem; }
+.compact-catalogue .product-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.compact-catalogue .product-card {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: center;
+  padding: .75rem;
+  gap: .75rem;
+}
+.compact-catalogue .product-card .product-gallery { min-width: 0; }
+.compact-catalogue .product-card .product-gallery img { max-height: 16rem; }
+.compact-catalogue .product-info { padding: 0; }
+.compact-catalogue .product-name { font-size: 1.5rem; margin-bottom: .4rem; }
+.compact-catalogue .gallery-status { min-height: 8rem; padding: .65rem; font-size: .8rem; }
+@media (max-width: 600px) {
+  .compact-catalogue .faery-content {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: .75rem;
+  }
+  .compact-catalogue .faery-section { padding: .75rem; }
+}
+@media (max-width: 380px) {
+  .compact-catalogue .faery-content,
+  .compact-catalogue .product-card { grid-template-columns: minmax(0, 1fr); }
+  .compact-catalogue .faery-content > .product-gallery,
+  .compact-catalogue .product-card > .product-gallery { width: 100%; max-width: 14rem; margin-inline: auto; }
+}
+
+/* A tiny gallery preview stays inside the native disclosure control. */
+.compact-catalogue .product-pictures summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .4rem;
+  min-height: 2.75rem;
+  list-style: none;
+}
+.compact-catalogue .product-pictures summary::-webkit-details-marker { display: none; }
+.compact-catalogue .gallery-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+.compact-catalogue .gallery-preview img {
+  display: block;
+  height: 18px;
+  width: auto;
+  max-width: 36px;
+  object-fit: contain;
+  border-radius: 2px;
+}
+.compact-catalogue .gallery-collapse-label { display: none; }
+.compact-catalogue .product-pictures[open] .gallery-preview,
+.compact-catalogue .product-pictures[open] .gallery-preview-label { display: none; }
+.compact-catalogue .product-pictures[open] .gallery-collapse-label { display: inline; }

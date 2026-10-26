@@ -1,11 +1,38 @@
 // Reuse a folder anywhere: data-gallery="faeries/autumn-fae" data-count="0".
 // 0 means all; positive integers select the first N naturally sorted filenames.
+function setupGalleryPreviews(root) {
+  root.querySelectorAll('.compact-catalogue .product-pictures').forEach(details => {
+    const summary = details.querySelector('summary');
+    const photos = details.querySelectorAll('[data-gallery] img');
+    if (!summary) return;
+    const previews = document.createElement('span');
+    previews.className = 'gallery-preview';
+    previews.setAttribute('aria-hidden', 'true');
+    photos.forEach(photo => {
+      const thumbnail = document.createElement('img');
+      thumbnail.src = photo.getAttribute('src');
+      thumbnail.alt = '';
+      thumbnail.loading = 'lazy';
+      thumbnail.decoding = 'async';
+      previews.append(thumbnail);
+    });
+    const label = document.createElement('span');
+    label.className = 'gallery-preview-label';
+    label.textContent = 'view all';
+    const collapseLabel = document.createElement('span');
+    collapseLabel.className = 'gallery-collapse-label';
+    collapseLabel.textContent = 'view less';
+    summary.replaceChildren(previews, label, collapseLabel);
+  });
+}
+
 async function setupGalleries(root = document, suppliedFolders = null) {
   const containers = root.querySelectorAll('[data-gallery]:not([data-gallery-rendered])');
   document.querySelectorAll('.product-pictures').forEach(details => {
     const gallery = details.querySelector('[data-gallery-rendered]');
     if (gallery) details.hidden = gallery.querySelectorAll('img').length < 2;
   });
+  setupGalleryPreviews(root);
   if (!containers.length) return;
   try {
     let folders = suppliedFolders;
@@ -45,6 +72,7 @@ async function setupGalleries(root = document, suppliedFolders = null) {
         container.append(link);
       });
     });
+    setupGalleryPreviews(root);
   } catch (error) {
     console.error(error);
     containers.forEach(container => {
