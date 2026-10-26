@@ -125,3 +125,14 @@ test('homepage HTML and browser catalogue reflect publication while previews ret
   assert.deepEqual(api.products[0].images,[]);
   assert.ok(html.includes('js/home.js'));
 });
+
+test('order choices use the same active catalogue snapshot as the order page', async () => {
+  const { handlers } = setup();
+  const html = await (await handlers.page(req('/order.html'))).text();
+  const embedded = html.match(/<script id="order-products" type="application\/json">([\s\S]*?)<\/script>/);
+  assert.ok(embedded, 'order page embeds its catalogue');
+  const products = JSON.parse(embedded[1]);
+  assert.ok(products.length > 0);
+  assert.ok(products.every(p => p.active && p.id && p.name && p.orderTab));
+  assert.ok(html.includes('name="selected-products"'));
+});

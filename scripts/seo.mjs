@@ -57,7 +57,8 @@ export async function buildSEO(root, manifest) {
   const origin = siteOrigin(config);
   const preview = !!process.env.CONTEXT && process.env.CONTEXT !== 'production';
   const shared = await readFile(path.join(root,'snippets/header-footer.html'),'utf8');
-  const header = shared.match(/<header>[\s\S]*?<\/header>/)[0];
+  const header = shared.match(/<header\b[^>]*>[\s\S]*?<\/header>/)[0];
+  const navigation = shared.match(/<nav class="main-nav"[\s\S]*?<\/nav>/)?.[0] || '';
   const footer = shared.match(/<footer>[\s\S]*?<\/footer>/)[0];
   for (const file of Object.keys(pages)) {
     let html = await readFile(path.join(root,file),'utf8');
@@ -70,7 +71,11 @@ export async function buildSEO(root, manifest) {
       html = pattern.test(html) ? html.replace(pattern,()=>block) : name === 'header' ? html.replace(/<body>/,`<body>\n${block}`) : html.replace('</body>',`${block}\n</body>`);
     }
     html = html.replace(/<!-- breadcrumbs:start -->[\s\S]*?<!-- breadcrumbs:end -->\n?/g,'');
-    if (file !== 'index.html') html = html.replace(/<main>\n?/, `<main>\n<!-- breadcrumbs:start --><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> <span aria-current="page">${esc(pages[file].name)}</span></nav><!-- breadcrumbs:end -->\n`);
+    html = html.replace(/<!-- main-nav:start -->[\s\S]*?<!-- main-nav:end -->\n?/g, '');
+    if (file !== 'index.html' && navigation) {
+      const activeNavigation = navigation.replace(`href="${file}"`, `aria-current="page" href="${file}"`);
+      html = html.replace(/<main\b[^>]*>\s*/, match => `${match.trimEnd()}\n<!-- main-nav:start -->${activeNavigation}<!-- main-nav:end -->\n`);
+    }
     await writeFile(path.join(root,file),renderGalleries(html,manifest));
   }
   await writeFile(path.join(root,'robots.txt'),`User-agent: *\nAllow: /\n${origin && !preview ? `\nSitemap: ${origin}/sitemap.xml\n` : ''}`);

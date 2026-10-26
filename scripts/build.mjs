@@ -38,7 +38,7 @@ function productMarkup(p, cards) {
   const order = `<a class="order-button product-order" href="order.html?product=${encodeURIComponent(p.id)}#${p.orderTab}">${p.category === 'more' ? 'Enquire about this creation' : 'Order '+escape(p.name)}</a>`;
   const images = gallery(p, cards ? 0 : 1);
   const extras = cards ? '' : `<details class="product-pictures"><summary>View all photographs</summary>${gallery(p, 0)}</details>`;
-  return cards ? `<article class="product-card" id="${p.id}">${images}<div class="product-info"><h3 class="product-name">${escape(p.name)}</h3>${content}${order}</div></article>` : `<section class="faery-section" id="${p.id}"><h2>${escape(p.name)}</h2><div class="faery-content">${images}<div class="faery-text">${content}${order}</div></div>${extras}</section>`;
+  return cards ? `<article class="product-card" id="${p.id}">${images}<div class="product-info"><h3 class="product-name">${escape(p.name)}</h3>${content}${order}</div></article>` : `<section class="faery-section" id="${p.id}"><h2>${escape(p.name)}</h2><div class="faery-content">${images}<div class="faery-text">${content}</div></div>${extras}${order}</section>`;
 }
 export async function build() {
   const products = JSON.parse(await readFile(path.join(root, 'data/products.json'), 'utf8'));

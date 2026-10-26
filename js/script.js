@@ -46,20 +46,7 @@ function setupOrderTabs() {
   window.addEventListener('hashchange', sync);
   window.addEventListener('popstate', sync);
   sync();
-  const productId = new URLSearchParams(location.search).get('product');
-  if (productId) {
-    const embedded = document.getElementById('selected-product');
-    const products = embedded ? Promise.resolve([JSON.parse(embedded.textContent)]) : fetch('data/products.json').then(response => {
-      if (!response.ok) throw new Error('Could not load product');
-      return response.json();
-    });
-    products.then(products => {
-      const product = products.find(p => p.active && p.id === productId);
-      if (!product) return;
-      const field = document.querySelector(`#${product.orderTab} textarea[name="description"]`);
-      if (field && !field.value) field.value = `I would like to order: ${product.name}.`;
-    }).catch(console.error);
-  }
+
 }
 document.addEventListener('DOMContentLoaded', setupOrderTabs);
 
