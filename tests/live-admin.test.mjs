@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {CatalogueStore,storeName} from '../lib/store.mjs';
-import {validateCatalogue,validImage} from '../lib/catalogue.mjs';
+import {validateCatalogue,validImage,renderProducts} from '../lib/catalogue.mjs';
 import {createHandlers} from '../lib/handlers.mjs';
 import {MemoryStore} from './support/memory-store.mjs';
 const products=JSON.parse(await readFile('data/products.json','utf8'));
@@ -135,4 +135,26 @@ test('order choices use the same active catalogue snapshot as the order page', a
   assert.ok(products.length > 0);
   assert.ok(products.every(p => p.active && p.id && p.name && p.orderTab));
   assert.ok(html.includes('name="selected-products"'));
+});
+
+
+test('live faery pages place each order button after the expanded gallery', async () => {
+  const html = await (await setup().handlers.page(req('/faeries.html'))).text();
+  const sections = [...html.matchAll(/<section class="faery-section"[\s\S]*?<\/section>/g)];
+  assert.ok(sections.length > 0);
+  for (const [section] of sections) {
+    assert.match(section, /<a class="order-button product-order"[^>]*>[^<]+<\/a><\/section>$/);
+    if (section.includes('<details')) assert.ok(section.indexOf('</details>') < section.indexOf('class="order-button product-order"'));
+  }
+});
+
+test('live detail layouts keep order buttons last with zero, one or multiple photos', () => {
+  for (const category of ['faeries', 'fictional-magical-characters']) {
+    const product = seed.products.find(p => p.category === category);
+    for (const count of [0, 1, 3]) {
+      const html = renderProducts({ products: [{ ...product, active: true, images: Array.from({length: count}, (_, i) => `images/test/${i}.webp`) }] }, category);
+      assert.match(html, /<a class="order-button product-order"[^>]*>[^<]+<\/a><\/section>$/);
+      if (count > 1) assert.ok(html.indexOf('</details>') < html.indexOf('class="order-button product-order"'));
+    }
+  }
 });

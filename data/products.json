@@ -1,19 +1,45 @@
 [
   {
     "id": "autumn-fae",
-    "name": "Autumn Fae & Faery",
+    "name": "Autumn Fae",
     "category": "faeries",
     "page": "faeries.html",
     "orderTab": "faeries",
     "blocks": [
       {
         "type": "p",
-        "text": "As the leaves turn golden and crimson, the Autumn Fae emerge to celebrate the harvest season. These magical beings embody the transformation and abundance of fall, bringing warmth and gratitude to all they touch. The Autumn Fae remind us to appreciate the beauty of change and the gifts of the season."
+        "text": "As the leaves turn golden and crimson, the Autumn Fae emerges."
+      }
+    ],
+    "active": true
+  },  {
+    "id": "autumn-faery",
+    "name": "Autumn Faery",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "These magical beings embody the transformation of autumn. The Autumn Faery reminds us to appreciate the beauty of change and the gifts of the season."
       }
     ],
     "active": true
   },
   {
+    "id": "frost-faery",
+    "name": "Frost Faery",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Missing description"
+      }
+    ],
+    "active": true
+  },{
     "id": "earth-faery",
     "name": "Gaia – Earth Faery",
     "category": "faeries",
@@ -29,14 +55,27 @@
   },
   {
     "id": "halloween-fae",
-    "name": "Halloween Fae & Faery",
+    "name": "Halloween Fae",
     "category": "faeries",
     "page": "faeries.html",
     "orderTab": "faeries",
     "blocks": [
       {
         "type": "p",
-        "text": "As the veil between worlds grows thin, the Halloween Fae dance through the October nights. These playful spirits celebrate mystery, magic, and the supernatural. With mischievous grins and mysterious eyes, they invite us to embrace the shadows and discover the magic hidden in darkness."
+        "text": "Missing description"
+      }
+    ],
+    "active": true
+  },{
+    "id": "halloween-faery",
+    "name": "Halloween Faery",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Missing description"
       }
     ],
     "active": true
@@ -155,7 +194,7 @@
   },
   {
     "id": "winter-fae",
-    "name": "Winter Fae & Faery",
+    "name": "Winter Fae",
     "category": "faeries",
     "page": "faeries.html",
     "orderTab": "faeries",
@@ -163,6 +202,19 @@
       {
         "type": "p",
         "text": "The Winter Fae celebrate the magic of the cold season with crystalline beauty and quiet wonder. These serene beings bring peace, contemplation, and the beauty of stillness. Winter Fae remind us to slow down and find magic in the quiet, restful times."
+      }
+    ],
+    "active": true
+  },{
+    "id": "winter-faery",
+    "name": "Winter  Faery",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Missing description"
       }
     ],
     "active": true
