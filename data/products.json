@@ -138,7 +138,7 @@
   },
   {
     "id": "spring-fae",
-    "name": "Spring Fae & Faery",
+    "name": "Spring Fae",
     "category": "faeries",
     "page": "faeries.html",
     "orderTab": "faeries",
@@ -149,10 +149,23 @@
       }
     ],
     "active": true
+  },{
+    "id": "spring-faery",
+    "name": "Spring Faery",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Missing description"
+      }
+    ],
+    "active": true
   },
   {
     "id": "summer-fae",
-    "name": "Summer Fae & Faery",
+    "name": "Summer Fae",
     "category": "faeries",
     "page": "faeries.html",
     "orderTab": "faeries",
@@ -160,6 +173,19 @@
       {
         "type": "p",
         "text": "Summer Fae bask in the golden light and celebrate the season of abundance and joy. These radiant beings bring warmth, vitality, and celebration to all they encounter. With their bright energy and playful spirit, Summer Fae remind us to enjoy the abundance of life."
+      }
+    ],
+    "active": true
+  },{
+    "id": "summer-faery",
+    "name": "Summer Faery",
+    "category": "faeries",
+    "page": "faeries.html",
+    "orderTab": "faeries",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Missing description"
       }
     ],
     "active": true
@@ -207,7 +233,7 @@
     "active": true
   },{
     "id": "winter-faery",
-    "name": "Winter  Faery",
+    "name": "Winter Faery",
     "category": "faeries",
     "page": "faeries.html",
     "orderTab": "faeries",
