@@ -1122,9 +1122,9 @@ span.radio-item-title, span.radio-item-price { display: block; }
 }
 .compact-catalogue .gallery-preview img {
   display: block;
-  height: 18px;
+  height: 78px;
   width: auto;
-  max-width: 36px;
+  max-width: 46px;
   object-fit: contain;
   border-radius: 2px;
 }
